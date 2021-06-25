@@ -1,0 +1,404 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{rotating}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\title{2nd year paper}
+\author{Ivan Anich}
+
+\begin{document}
+\maketitle
+
+\section*{outline}
+
+\begin{enumerate}
+	\item Intro and Lit Review - Work on this section last. For the literature review I would focus on Walker (1981) and the Varian paper I gave you earlier this year. 
+	\item Model - Define economic environment and assumptions on the utility functions/ production function/ etc. Use my draft as your main guide. 
+	\item Generalized Lindahl Equilibrium - Define Generalized Lindahl Equilibria and provide an example (Rawlsian). 
+	\item Generalized Walker Mechanism - define the mechanism and give your main result. 
+	\item Discussion - I would talk about what you still need to do. For example, the other half of the mechanism result (all G. Lindahl Outcomes are achievable as NE of the game). Also, the set of NE is very large, we need to find a way to enforce a single outcome. 
+\end{enumerate}
+
+\section*{To do}
+
+\begin{itemize}
+	\item update annotation of setting to align w/ Van Essen
+	\item Lit Review
+	\item REference work done jointly w/ Van Essen
+\end{itemize}
+
+\section{Introduction}
+
+
+\section{Model}
+
+A fairly simple economic environment will provide an adequate setting. There will be \(i = 1, ..., n \geq 2\) individuals in the economy, each represented by a convex consumption set \(C_i = \mathbb{R}_i^2\) and an initial endowment of a private good \(\omega_i > 0\). They consume bundles of a public good \(x\) a private good \(y_i\), and in doing so gain utility according to utility functions of the following form.
+
+\begin{equation}
+u_i(x, y_i) = \int_0^x v_i(t) dt + y_i
+\label{set_util}
+\end{equation}
+
+This functional form simplifies later analysis, as \(\frac{\partial u_i}{\partial x} = v_i(x) > 0\) and \(\frac{\partial^2 u_i}{\partial x^2} = v_i'(x) < 0\) for \(x \in \mathbb{R}_+\). \(v_i\) is the the marginal rate of substitution between the public good and the private good for individual \(i\). 
+
+The public good is produced in a constant returns to scale production process that uses the private good as an input: for each unit of the public good produced, \(c\) of the private good must be sacrificed. If \(\Omega = \sum_i \omega_i\), then the most public good that can be produced is \(\frac{\Omega}{c}\). An allocation in this economy is then an \((n+1)\)-tuple \((x, y_1, ..., y_n) \in \mathbb{R}_+^{n+1}\). 
+
+We shall assume that there is a unique Pareto optimal allocation in the economy, such that a unique level of provision of the public good is Pareto optimal. This is to say that there is a level of the public good that satisfies the Samuelson marginal condition: \(\sum_i v_i(x^{PO}) = c\) for \(x \in [0, \frac{\Omega}{c}]\). To ensure this, we assume \(\sum_i v_i(0) > c\) and \(\sum_i v_i(\frac{\Omega}{c} < c)\). In addition, we shall also assume that the initial endowments of the private good are sufficiently large for feasible provision of \(x^{PO}\), \(\omega_i \geq v_i(0) x^{PO}\).
+
+\subsection{Classical Lindahl Equilibrium}
+
+An unregulated market cannot efficiently provide a public good. A firm cannot earn revenue by selling the right to consume a public good because it cannot prevent the consumption of a public good by those who have not paid for it. Consumers face a strong incentive not pay for the provision of a public good because once the public good is provided the consumption of it by one individual does not prevent the consumption of it by another. These are the usual non-rival and non-excludable characteristics associated with a public good. Some sort of market regulation is required to elicit and finance the efficient provision of the public good. Individuals can be taxed and production can be centralized by a government. One theoretical equilibrium that allows a Pareto optimal amount of the public good to be provided is a classical Lindahl equilibrium.
+
+A classical Lindahl equilibrium uses individualized taxes, known as Lindahl prices, to raise revenue for the provision of a public good. It finds the socially optimal level of the public good and then charges each customer their marginal valuation of the public good at the socially optimal level. With constant marginal costs of provision and downward sloping demand curves, a classical Lindahl equilibrium ensures that it is individually rational for individuals to pay the tax levied upon them and that the sum of such taxes exactly covers the provision of the public good. 
+
+For example, consider an instance of the economic setting outlined above with \(n=2\), \(c=5\), and the following utility functions for the two individuals 
+
+\begin{align*}
+u_1(x, y_1) &= \int_0^x \left( 20 - 2t \right) dt + y_1 \\
+u_2(x, y_2) &= \int_0^x \left( 6 - 0.1t \right) dt + y_2
+\end{align*}
+
+\noindent And so
+
+\begin{align*}
+v_1(x) &= 20 - 2x \\
+v_2(x) &= 6 - 0.1x
+\end{align*}
+
+\begin{figure}
+\center{Classical Lindahl Equilibrium}
+\includegraphics[width=\textwidth]{classical_lindahl_plots.pdf}
+\caption{An example of a classical Lindahl Equilbrium for \(n=2\) consumers. The vertical grey dotted line is located at the Pareto optimal level of the public good. Consumer 1 is charged nothing, while consumer 2 is charged 5 units of the private good.}
+\label{classical_lind}
+\end{figure}
+
+This setting is shown graphically in figure \ref{classical_lind}. To construct a classical Lindahl equilibrium we would first find the Pareto optimal level of the public good, \(x^{PO}\), via the Samuelson marginal condition, \(\sum_i v_i(x^{PO}) = c\). Then, because the private good is a numeraire, the tax \(t_i\) levied upon each individual would be equal to their marginal rate of substitution evaluated at \(x^{PO}\), \(t_i = v_i(x^{PO})\). Here, the Pareto optimal amount of the public good is \(x^{PO} = 10\). The marginal benefit of the public good at this level is 0 for consumer 1 and 5 for consumer 2, and so \(t_1 = 0\) and \(t_2 = 5\). 
+
+We can see that the classical Lindahl equilibrium leaves both consumers better off than they would be if no public good was provided, so the outcome is indeed individually rational. It also raises tax revenue that covers the cost of providing the public good. But, it is also clear that consumer 1 is left far better off than consumer 2, even though consumer 2 incurs all of the costs.
+
+This illustrates how a Lindahl equilibrium does not take into account the distribution of surplus among consumers when optimizing the provision of a public good. Even though the outcome is individually rational, some consumers may be left far better off than others. In order to address this flaw, we introduce the concept of a generalized Lindahl equilibrium. 
+
+\section{Generalized Lindahl Equilibrium}
+
+A classical Lindahl equilibrium must be individually rational and raise tax revenue equal to the cost of provision of the public good. As stated in the previous section, the disregard of consumer surplus in such an equilibrium can lead to unfair outcomes. In this section, I explain how a generalization of the classical Lindahl result can allow a social planner to construct far more equitable outcomes. 
+
+The unjustness of the classical result can be thought of as deriving from the linearity of prices faced by consumers. Consumers are charged one personalized tax across all margins of consumption of the public good; the surplus they attain at each margin is then the difference between their marginal valuation and their personalized taxes. If those taxes were non-linear, a more equitable outcome could be achieved. A tax schedule could be created such that the equity of the benefits accruing to each consumer at each margin of provision of the public good were taken into account. This allowance for non-linear taxation \textit{is} the generalization of the classical Lindahl equilibrium that constitutes the purpose of this paper.  
+
+A generalized Lindahl equilibrium sees each customer receive a personalized tax schedule, instead of a single personalized tax. The outcome is still individually rational and covers the cost of provision, as in the classical case, but now a central planner or government can manipulate the personalized price schedules to distribute consumer surplus as they see fit. 
+
+\begin{definition}
+A profile of individualized price schedules induces a generalized Lindahl equilibrium if it is (1) individually rational for each individual to demand the Pareto optimal amount of the public good and (2) if the cost of providing the public good is exactly covered by taxes paid by each individual. 
+\end{definition} 
+
+Note that a generalized Lindahl equilibrium is agnostic about the specific distribution of consumer surplus. It merely requires that a tax schedule is administered. Consequently, there are many generalized Lindahl equilibria capable of providing the Pareto optimal level of the public good. The social planner can chose an outcome that obtains a desired distribution from among all feasible generalized Lindahl equilibria. This will be explored further in the next section.
+
+For now I shall discuss some necessary conditions for a generalized Lindahl equilibrium, using the economic setting described above for the exposition. A personalized tax schedule is defined as a function \(p_i : \mathbb{R} \rightarrow \mathbb{R}\), such that the total tax revenue collected from individual \(i\) for a level of provision of the public good \(x\) is \(T_i(x) = \int_0^x p_i(t) dt\). The budget constraint of a customer is then \( \int_0^x p_i(t) dt + y_i = \omega_i \). If we solve for the level of the private good and substitute this into their utility function we can express their utility in terms of their initial allocation and the level of public good provided.
+
+\begin{equation}
+u_i \left( x, \omega_i - \int_0^x p_i(t) dt \right) = u_i(x) = \int_0^x \left[ v_i(t) - p_i(t) \right] dt + \omega_i
+\label{gle_util}
+\end{equation}
+
+\noindent If the Pareto optimal level of the public good is to be demanded by each consumer, then it must hold that 
+
+\begin{equation}
+\left. \frac{\partial u_i(x)}{\partial x} \right|_{x=x^{PO}} = 0 \rightarrow v_i(x^{PO}) = p_i(x^{PO})
+\label{gen_lp}
+\end{equation}
+
+\noindent So the prices charged at the margin for the public good in a generalized Lindahl equilibrium are the Lindahl prices from the classical Lindahl equilibrium. For the Pareto optimal amount to be demanded, it must also be true that 
+
+\begin{equation}
+u_i \left( x^{PO}, \omega_i - \int_0^{x^{PO}} p_i(t) dt \right) \geq u_i \left( 0, \omega_i \right)
+\label{gen_ir}
+\end{equation}
+
+\noindent And finally, for the tax revenues to cover the cost of provision, we must have
+
+\begin{equation}
+\sum_i  \int_0^{x^{PO}} p_i(t) dt = cx^{PO}
+\label{gen_cost}
+\end{equation}
+
+\noindent Equations \ref{gen_lp}, \ref{gen_ir}, and \ref{gen_cost} must all hold for an equilibrium to qualify as a generalized Lindahl equilibrium. In the next section, they shall function as constraints on a social welfare problem facing a social planner who wants to optimally provide a public good, and who has CES preferences over the individual consumer surpluses it oversees.
+
+
+\subsection{Generalized Lindahl Equilibrium under a CES Social Welfare Function}
+
+In this section I solve for a profile of individualized prices that obtains a generalized Lindahl equilibrium. Let us assume that a social planner wants to maximize the welfare of a group of agents. In doing so, it must optimally provide a public good and administer a set of personalized tax schedules. The problem faced by the social planner is then 
+
+\begin{align}
+\max_{\{ p_i(t)\}_{i=1}^n} &\int_0^{x^{PO}} \left[ \sum_{i=1}^n \beta_i (v_i(x) - p_i(x))^\alpha \right]^{\frac{1}{\alpha}} dx \label{objective}
+\\
+s.t. ~ & v_i(x^{PO}) = p_i (x^{PO}) \label{margin_constraint}
+\\
+& \int_0^{x^{PO}} \sum_{i=1}^n p_i(x) dx = cx^{PO} \label{iso_constraint}
+\end{align}
+
+Where \(\beta_i\) is an arbitrary weight for individual \(i\)'s surplus. Equation \ref{margin_constraint} ensures that the level of the public good provided is the level demanded by each individual, and equation \ref{iso_constraint} ensures that tax revenue will equal the cost of provision. These constraints are both explained further in the previous section.
+
+This is a calculus of variations problem. The necessary conditions to solve it are \ref{margin_constraint}, \ref{iso_constraint}, and \(n\) Euler equations, one for each individual:
+
+\begin{equation}
+\lambda = -\beta_j (v_j - p_j)^{\alpha - 1} \left[ \sum_{i=1}^n \beta_i (v_i - p_i)^\alpha \right]^{\frac{1- \alpha}{\alpha}} \quad \forall ~ j = 1, ..., n
+\end{equation}
+
+For the remainder of the derivation any dependency on \(x\) is suppressed. \(\lambda\) is the Lagrangian multiplier on the iso-perimetric constraint \ref{iso_constraint}. If we set the Euler equations for individuals 1 and 2 equal to each other, we get 
+
+\[
+\left( \frac{\beta_1}{\beta_2} \right)^{\frac{1}{\alpha - 1}} (v_1 - p_1) = v_2 - p_2
+\]
+
+I will define \( \Omega_{12} = \left( \beta_1 / \beta_2 \right)^{\frac{1}{\alpha - 1}}\). Substituting this in and rearranging, we get
+
+\[
+p_2 - \Omega_{12} p_1 = v_2 - \Omega_{12}v_1
+\]
+
+If we perform a similar manipulation among all \(n\) Euler conditions, we are left with a system of \(n-1\) equations
+
+\begin{align*}
+p_2 - \Omega_{12} p_1 &= v_2 - \Omega_{12}v_1
+\\
+p_3 - \Omega_{23} p_2 &= v_3 - \Omega_{23}v_2
+\\
+&\vdots
+\\
+p_n - \Omega_{n-1,n} p_{n-1} &= v_n - \Omega_{n-1,n}v_{n-1}
+\end{align*}
+
+One way to ensure that the iso-perimetric constraint holds is to assume that the taxes levied at each marginal provision of the public good are always equal to the marginal cost of production.
+
+\begin{equation}
+p_1 + p_2 + ... + p_n = c
+\label{iso_simp}
+\end{equation}
+
+With this and the system of \(n-1\) equations above, we now have a system of \(n\) equations that we can use to solve for closed-form solutions of individualized price schedules (the full solution is detailed in the appendix). Those solutions are
+
+\begin{equation}
+p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}} \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}  \right]
+\label{closed_p}
+\end{equation}
+
+Figure \ref{CES_plots} plots some examples of \ref{closed_p} in a two consumer setting for certain social welfare weights.
+
+
+\begin{sidewaysfigure}
+\center{Price Schedules, Marginal Benefits, and Marginal Cost in a 2 Consumer Setting for Various Values of \(\alpha\)}
+\includegraphics[width = \textwidth]{lindahl_plots}
+\caption{Above are several representations of price schedules leading to generalized Lindahl allocations for a setting with two individuals and various values of \(\alpha\). The marginal benefit functions are \(v_1(x) = 20 - 2x\), \(v_2(x)=6 - x/10\). Social welfare weights are \(\beta_1 = 10\) and \(\beta_2 = 1\). Marginal cost of providing the public good is 5, and the Pareto optimal amount of it is 10. Note that \(\alpha\) values of 0.9 and 1.1 are depicted because the weight ratios in 8 are raised to the power of \(1/(\alpha - 1)\). In the limit, approaching \(\alpha=1\) from the left or right leads to vastly difference results.}
+\label{CES_plots}
+\end{sidewaysfigure}
+
+\section{Generalized Walker Mechanism}
+
+In this section I introduce a mechanism that, when implemented, induces a generalized Lindahl equilibrium.
+
+\subsection{Mechanism}
+
+A mechanism is defined by the messages players are allowed to choose and the functions that convert these messages into outcomes. In our environment, an outcome is specified by a level of the public good \(x\) and a set of personalized tax schedules for each individual \(\tau_i\) such that each individual pays in total \(T_i(x) = \int_0^x \tau_i(t) dt\). A message sent by individual \(i\) is a continuous function \(p_i : \mathbb{R} \rightarrow \mathbb{R}\). A message profile \(\mathbf{p} = (p_1, ..., p_n)\) is the list of messages sent by all individuals. The mechanism processes a message profile with \(n+1\) outcome functions \(\mathcal{X} : \prod_i^n C(\mathbb{R}) \rightarrow \mathbb{R}\) and \(\mathcal{T}_i : \prod_i^n C(\mathbb{R}) \rightarrow C(\mathbb{R})\) for \(i = 1, ..., n\). \(\mathcal{X}\) determines the level of the public good 
+	
+	\begin{equation}
+	\mathcal{X}(\mathbf{p}) = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
+	\label{oc_x}
+	\end{equation}
+
+ \noindent And \(\mathcal{T}_i\) determines individual \(i\)'s personalized tax schedule.
+		
+	\begin{equation}
+	 \mathcal{T}_i(\mathbf{p}) = \frac{\beta}{n} + p_{i+2} - p_{i+1}
+	\label{oc_t}
+	\end{equation}
+	
+\noindent The subscript \(i + j\) is understood to be a modulo operation, \(n+j= j\). This mechanism defines a game form, adding preferences to it induces a game.
+
+
+\begin{proposition}
+At any Nash equilibrium induced by our mechanism, any equilibrium outcome \((\vec{\tau}, x)\) coincides with a generalized Lindahl outcome and is Pareto optimal.
+\end{proposition}
+
+\begin{proof}
+To be a generalized Lindahl outcome, each individual must be given a personal price schedule, the cost of providing the public good must be covered, and the allocation \((\vec{\tau}, x)\) must be individually rational and Pareto optimal. To begin, each player faces the following utility maximization problem:
+
+\begin{align*}
+&\max_{p_i(x)} ~u_i \left( \omega_i - \int_0^x \tau_i(t) dt, x \right)
+\\
+&s.t.~ x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
+\end{align*}
+
+\noindent or
+
+\begin{align*}
+&\max_{p_i(x)} ~ u_i \left( \omega_i - \int_0^x \left[ \frac{\beta}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt, x \right) \numberthis 
+\\
+&s.t.~ x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
+\end{align*}
+
+The problem can be simplified further, as a choice over \(x\). The objective function does not \textit{directly} depend on an individual's choice of message \(p_i\), but the amount of the public good provided does, via the constraint. Given any set of messages submitted by other individuals, a single individual's choice of \(p_i\) can demand any level of \(x\), and only by this level of \(x\) does \(p_i\) affect their utility.  
+
+\begin{equation}
+\max_x ~ u_i \left( \omega_i - \int_0^x \left[ \frac{\beta}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt, x \right) 
+\end{equation}
+
+The first order condition for utility maximization is: 
+
+\begin{align*}
+\frac{u_{i, x}}{u_{i, y_i}} &= \frac{\beta}{n} + p_{i+2}(x) - p_{i+1}(x) \numberthis \label{foc}
+\end{align*}
+
+\noindent A best responding individual submits a message \(p_i\) such that the level of the public good it demands is optimal given their personalized price at the margin. 
+
+The sum of all \(n\) first order conditions is 
+
+
+\begin{equation}
+\sum_{i=1}^n \frac{u_{i, x}}{u_{i, y_i}} = \beta
+\label{eq}
+\end{equation}
+
+\noindent Because of the modulo dependence of the personalized prices, the sum of all personalized prices equals marginal cost at every marginal provision of the public good. The cost of providing \(x\) will always be covered. At any Nash equilibrium, any equilibrium outcome is a generalized Lindahl outcome: the outcome provides individualized price schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. 
+
+\end{proof}
+
+\section{Discussion}
+
+
+\section{Appendix}
+
+The solution will take place as follows: I will solve for \(p_1\) in terms of \(p_2, v_1\) and \(v_2\), and then substitute \(p_1\) into \ref{iso_simp}; I will iterate this process two more times, substituting equations for \(p_2\) and \(p_3\) into \ref{iso_simp}; at that point a pattern will emerge that will allow me to extrapolate a closed-form solution for to \(p_n\), and then for \(p_{n-1}\); finally, I will use the pattern observable in the solutions for \(p_n\) and \(p_{n-1}\) solution to deduce a closed form solution for \(p_i\) in general.
+
+As stated, first solve for \(p_1\) 
+	
+\[
+p_1 = \frac{-v_2}{\Omega_{12}} + v_1 + \frac{p_2}{\Omega_{12}}
+\]
+
+\noindent Substitute into \ref{iso_simp}
+
+\[
+\left( \frac{-v_2}{\Omega_{12}} + v_1 + \frac{p_2}{\Omega_{12}} \right) + p_2 + p_3 + ... + p_n = c
+\]
+
+Combine terms, keeping prices and marginal benefits organized, and note that \(\Omega_{ij} = \Omega_{ji}^{-1}\). We get our first instance of a pattern.
+
+\[
+\left( 1 + \Omega_{21} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{21} v_2 = c
+\]
+
+Iterating, solve for \(p_2\) in terms of \(p_3, v_2\) and \(v_3\) using the equation relating \(p_2\) to \(p_3\) from our system of equalities. Substitute into above.
+
+\[
+\left( 1 + \Omega_{21} \right) \left( \frac{-v_3}{\Omega_{23}} + v_2 + \frac{p_3}{\Omega_{23}} \right) + p_3 + p_4 + ... + p_n + v_1 -\Omega_{21} v_2 = c
+\]
+
+Combine terms again, and note that \(\Omega_{Ki} / \Omega_{Kj} = \Omega_{ij}\). A nice cancellation occurs. We get a second instance of the pattern.
+
+\[
+\left( 1 + \Omega_{32} + \Omega_{31} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+\]
+
+Iterate one last time, substituting for \(p_3\).
+
+\[
+\left( 1 + \Omega_{32} + \Omega_{31} \right) \left(  \frac{-v_4}{\Omega_{34}} + v_3 + \frac{p_4}{\Omega_{34}} \right) + p_4 + p_5 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+\]
+
+Combine terms, and we get a third instance of the pattern.
+
+\[
+\left( 1 + \Omega_{43} + \Omega_{42} + \Omega_{41} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{43} + \Omega_{42} + \Omega_{41}) v_4 = c
+\]
+
+Let's quickly look at all three instances of the pattern together.
+
+\begin{align*}
+&\left( 1 + \Omega_{21} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{21} v_2 = c
+\\
+&\left( 1 + \Omega_{32} + \Omega_{31} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+\\
+&\left( 1 + \Omega_{43} + \Omega_{42} + \Omega_{41} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{43} + \Omega_{42} + \Omega_{41}) v_4 = c
+\end{align*}
+
+By extrapolation, and noting that \(\Omega_{ii} = 1\), \(p_n\) must be implicitly defined by
+
+\[
+p_n \sum_{i=1}^n \Omega_{ni} + \sum_{i=1}^{n-1} v_i - v_n \sum_{i=1}^{n-1} \Omega_{ni} = c
+\]
+
+Solving for \(p_n\), we get
+
+\begin{equation}
+p_n = \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\end{equation}
+
+To get a closed form solution for any \(p_i\), I'll first use 6 to solve for \(p_{n-1}\) using the equation from our system of equations that relates \(p_{n-1}\) to \(p_n\). Then with closed from solutions for both \(p_n\) and \(p_{n-1}\), a pattern emerges that I use to solve for the general closed form solution for \(p_i\).
+
+First, solve for \(p_{n-1}\). We know that
+
+\[
+p_{n-1} = \frac{-v_n}{\Omega_{n-1,n}} + v_{n-1} + \frac{p_n}{\Omega_{n-1,n}}
+\]
+
+Substitute in 6. Step by step simplification:
+
+\begin{align*}
+p_{n-1} &= \frac{-v_n}{\Omega_{n-1,n}} + v_{n-1} + \frac{1}{\Omega_{n-1,n}} \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\\
+& =  - \Omega_{n,n-1} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{n-1, n} \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\\
+& = - \Omega_{n,n-1} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\\
+& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - \Omega_{n,n-1} v_n \sum_{i=1}^n \Omega_{n-1, i} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+\\
+& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{n, i} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+\\
+&  =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{ni} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+\\
+& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \left( \sum_{i=1}^{n-1} \Omega_{ni} - \sum_{i=1}^n \Omega_{ni} \right) \right]
+\end{align*}
+
+At this point, we need to break steps down term by term. Note that the term in the parenthesis within the brackets equals -1, and that
+
+\[
+v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} = v_{n-1} \left( 1 +\sum_{i \neq n-1} \Omega_{n-1, i} \right) =  v_{n-1} + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}
+\]
+
+ The lone \(v_{n-1}\) will cancel with the final term in the \( \sum_{i=1}^{n-1} v_i \) summation. This leaves us with
+ 
+ \[
+ p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i} + c - \sum_{i=1}^{n-2} v_i - v_n \right]
+ \]
+ 
+ Or
+ 
+ \begin{equation}
+ p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}  \right]
+ \end{equation}
+
+Our closed form solution to \(p_{n-1}\). Finally let's compare 7 to 6.
+
+\begin{align*}
+ &p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}  \right]
+\\
+&p_n = \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\end{align*}
+
+From the above pattern, it's clear that the closed form solution for any \(p_j\) is
+
+\begin{equation}
+p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}} \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}  \right]
+\end{equation}
+
+
+
+
+\end{document}
