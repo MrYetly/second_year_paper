@@ -30,7 +30,6 @@
 \section*{To do}
 
 \begin{itemize}
-	\item update annotation of setting to align w/ Van Essen
 	\item Lit Review
 	\item REference work done jointly w/ Van Essen
 \end{itemize}
@@ -53,7 +52,7 @@ The public good is produced in a constant returns to scale production process th
 
 We shall assume that there is a unique Pareto optimal allocation in the economy, such that a unique level of provision of the public good is Pareto optimal. This is to say that there is a level of the public good that satisfies the Samuelson marginal condition: \(\sum_i v_i(x^{PO}) = c\) for \(x \in [0, \frac{\Omega}{c}]\). To ensure this, we assume \(\sum_i v_i(0) > c\) and \(\sum_i v_i(\frac{\Omega}{c} < c)\). In addition, we shall also assume that the initial endowments of the private good are sufficiently large for feasible provision of \(x^{PO}\), \(\omega_i \geq v_i(0) x^{PO}\).
 
-\subsection{Classical Lindahl Equilibrium}
+\subsection{Classical Lindahl Equilibrium} \label{CLE}
 
 An unregulated market cannot efficiently provide a public good. A firm cannot earn revenue by selling the right to consume a public good because it cannot prevent the consumption of a public good by those who have not paid for it. Consumers face a strong incentive not pay for the provision of a public good because once the public good is provided the consumption of it by one individual does not prevent the consumption of it by another. These are the usual non-rival and non-excludable characteristics associated with a public good. Some sort of market regulation is required to elicit and finance the efficient provision of the public good. Individuals can be taxed and production can be centralized by a government. One theoretical equilibrium that allows a Pareto optimal amount of the public good to be provided is a classical Lindahl equilibrium.
 
@@ -90,7 +89,7 @@ This illustrates how a Lindahl equilibrium does not take into account the distri
 
 A classical Lindahl equilibrium must be individually rational and raise tax revenue equal to the cost of provision of the public good. As stated in the previous section, the disregard of consumer surplus in such an equilibrium can lead to unfair outcomes. In this section, I explain how a generalization of the classical Lindahl result can allow a social planner to construct far more equitable outcomes. 
 
-The unjustness of the classical result can be thought of as deriving from the linearity of prices faced by consumers. Consumers are charged one personalized tax across all margins of consumption of the public good; the surplus they attain at each margin is then the difference between their marginal valuation and their personalized taxes. If those taxes were non-linear, a more equitable outcome could be achieved. A tax schedule could be created such that the equity of the benefits accruing to each consumer at each margin of provision of the public good were taken into account. This allowance for non-linear taxation \textit{is} the generalization of the classical Lindahl equilibrium that constitutes the purpose of this paper.  
+The unjustness of the classical result can be thought of as a result of the linearity of prices faced by consumers. Consumers are charged one personalized tax across all margins of consumption of the public good; the surplus they attain at each margin is then the difference between their marginal valuations and these constant taxes. If those taxes were non-linear, a more equitable outcome could be achieved. A tax schedule could be created such that the equity of the benefits accruing to each consumer at each margin of provision of the public good were taken into account. This allowance for non-linear taxation \textit{is} the generalization of the classical Lindahl equilibrium that constitutes the purpose of this paper.  
 
 A generalized Lindahl equilibrium sees each customer receive a personalized tax schedule, instead of a single personalized tax. The outcome is still individually rational and covers the cost of provision, as in the classical case, but now a central planner or government can manipulate the personalized price schedules to distribute consumer surplus as they see fit. 
 
@@ -100,26 +99,28 @@ A profile of individualized price schedules induces a generalized Lindahl equili
 
 Note that a generalized Lindahl equilibrium is agnostic about the specific distribution of consumer surplus. It merely requires that a tax schedule is administered. Consequently, there are many generalized Lindahl equilibria capable of providing the Pareto optimal level of the public good. The social planner can chose an outcome that obtains a desired distribution from among all feasible generalized Lindahl equilibria. This will be explored further in the next section.
 
-For now I shall discuss some necessary conditions for a generalized Lindahl equilibrium, using the economic setting described above for the exposition. A personalized tax schedule is defined as a function \(p_i : \mathbb{R} \rightarrow \mathbb{R}\), such that the total tax revenue collected from individual \(i\) for a level of provision of the public good \(x\) is \(T_i(x) = \int_0^x p_i(t) dt\). The budget constraint of a customer is then \( \int_0^x p_i(t) dt + y_i = \omega_i \). If we solve for the level of the private good and substitute this into their utility function we can express their utility in terms of their initial allocation and the level of public good provided.
+For now I shall discuss some necessary conditions for a generalized Lindahl equilibrium, using the economic setting described above for the exposition. A personalized tax schedule is defined as a function \(p_i : \mathbb{R} \rightarrow \mathbb{R}\), such that the total tax revenue collected from individual \(i\) for a level of provision of the public good \(x\) is \(T_i(x) = \int_0^x p_i(t) dt\). The budget constraint of a customer is then \( \int_0^x p_i(t) dt + y_i = \omega_i \). If we solve for the level of the private good in terms of the level of the public good given their initial endowment, \(y_i(x)\), and substitute this into their utility function, we can express their utility in terms of their initial allocation and the level of public good provided.
 
 \begin{equation}
-u_i \left( x, \omega_i - \int_0^x p_i(t) dt \right) = u_i(x) = \int_0^x \left[ v_i(t) - p_i(t) \right] dt + \omega_i
+u_i(x, y_i(x)) = u_i \left( x, \omega_i - \int_0^x p_i(t) dt \right) = \int_0^x \left[ v_i(t) - p_i(t) \right] dt + \omega_i
 \label{gle_util}
 \end{equation}
 
-\noindent If the Pareto optimal level of the public good is to be demanded by each consumer, then it must hold that 
+\noindent From this we get the fist of two conditions for individual rationality: 
 
 \begin{equation}
-\left. \frac{\partial u_i(x)}{\partial x} \right|_{x=x^{PO}} = 0 \rightarrow v_i(x^{PO}) = p_i(x^{PO})
-\label{gen_lp}
+\left. \frac{\partial u_i(x, y_i(x))}{\partial x} \right|_{x=x^{PO}} = 0 \rightarrow v_i(x^{PO}) = p_i(x^{PO})
+\label{gen_ir1}
 \end{equation}
 
-\noindent So the prices charged at the margin for the public good in a generalized Lindahl equilibrium are the Lindahl prices from the classical Lindahl equilibrium. For the Pareto optimal amount to be demanded, it must also be true that 
+\noindent The prices charged at the margin for the public good in a generalized Lindahl equilibrium must be the Lindahl prices from the classical Lindahl equilibrium. The second condition for individual rationality requires that customers are indeed better off at the Pareto optimal outcome than they would be with zero public good provided.
 
 \begin{equation}
-u_i \left( x^{PO}, \omega_i - \int_0^{x^{PO}} p_i(t) dt \right) \geq u_i \left( 0, \omega_i \right)
-\label{gen_ir}
+u_i(x^{PO}, y_i(x^{PO})) \geq u_i(0, y_i(0))
+\label{gen_ir2}
 \end{equation}
+
+%why not state sufficient condition for IR?
 
 \noindent And finally, for the tax revenues to cover the cost of provision, we must have
 
@@ -128,12 +129,28 @@ u_i \left( x^{PO}, \omega_i - \int_0^{x^{PO}} p_i(t) dt \right) \geq u_i \left( 
 \label{gen_cost}
 \end{equation}
 
-\noindent Equations \ref{gen_lp}, \ref{gen_ir}, and \ref{gen_cost} must all hold for an equilibrium to qualify as a generalized Lindahl equilibrium. In the next section, they shall function as constraints on a social welfare problem facing a social planner who wants to optimally provide a public good, and who has CES preferences over the individual consumer surpluses it oversees.
+\noindent Equations \ref{gen_ir1}, \ref{gen_ir2}, and \ref{gen_cost} must all hold for an equilibrium to qualify as a generalized Lindahl equilibrium. In the next section, they shall function as constraints on a social welfare problem facing a social planner who wants to optimally provide a public good, and who has CES preferences over the individual consumer surpluses it oversees.
 
 
 \subsection{Generalized Lindahl Equilibrium under a CES Social Welfare Function}
 
-In this section I solve for a profile of individualized prices that obtains a generalized Lindahl equilibrium. Let us assume that a social planner wants to maximize the welfare of a group of agents. In doing so, it must optimally provide a public good and administer a set of personalized tax schedules. The problem faced by the social planner is then 
+We can imagine a society's preferences over the distribution of surplus being encoded into a marginal social welfare function. The maximization of the integral of this social welfare function, subject to the conditions necessary for a generalized Lindahl equilibrium stated in the previous section, is a theoretical representation of how such a society could provide a public good in an equitable way. 
+
+In general, let's say that this marginal social welfare function is a function of the marginal consumer surpluses of each individual in a society: \(W : \mathbb{R}_+^n \rightarrow \mathbb{R}\) is differentiable, quasiconcave, increasing in each of its arguments, and \(W(\boldsymbol{0}) = 0\). The restriction that \(W\) is defined on the non-negative elements of \(\mathbb{R}^n\) introduces a new constraint, \(v_i(t) - p_i(t) \geq 0 ~ \forall ~ t \in [0, x^{PO}]\), which must hold for integration to be defined. The combination of this new constraint and  \(v_i(t) - p_i(t) < 0 ~ \forall ~ t > x^{PO}\) provide a sufficient condition for individual rationality, ensuring that any optimal allocation of the public good will be individually rational. The problem facing a society is then
+
+\begin{align}
+\max_{\{ p_i(t)\}_{i=1}^n} &\int_0^{x^{PO}} W(v_1(t) - p_1(t), ..., v_n(t) - p_n(t)) dt 
+\\
+s.t. ~ & v_i(x^{PO}) = p_i (x^{PO}) 
+\\
+& v_i(t) - p_i(t) \geq 0 &\forall ~t \in [0, x^{PO}] \label{cons_pos}
+\\
+& v_i(t) - p_i(t) < 0 &\forall ~t > x^{PO} \label{cons_neg}
+\\
+& \int_0^{x^{PO}} \sum_{i=1}^n p_i(x) dx = cx^{PO} 
+\end{align}
+
+I will now solve a specific example of this problem in which society has CES preferences over individual marginal surplus.  
 
 \begin{align}
 \max_{\{ p_i(t)\}_{i=1}^n} &\int_0^{x^{PO}} \left[ \sum_{i=1}^n \beta_i (v_i(x) - p_i(x))^\alpha \right]^{\frac{1}{\alpha}} dx \label{objective}
@@ -143,27 +160,27 @@ s.t. ~ & v_i(x^{PO}) = p_i (x^{PO}) \label{margin_constraint}
 & \int_0^{x^{PO}} \sum_{i=1}^n p_i(x) dx = cx^{PO} \label{iso_constraint}
 \end{align}
 
-Where \(\beta_i\) is an arbitrary weight for individual \(i\)'s surplus. Equation \ref{margin_constraint} ensures that the level of the public good provided is the level demanded by each individual, and equation \ref{iso_constraint} ensures that tax revenue will equal the cost of provision. These constraints are both explained further in the previous section.
+\(\beta_i\) is an arbitrary weight for individual \(i\)'s surplus and \(-\infty > \alpha \leq 1\). Equation \ref{margin_constraint} ensures that the level of the public good provided is the level demanded by each individual, and equation \ref{iso_constraint} ensures that tax revenue will equal the cost of provision. In this instance, \ref{cons_pos} and \ref{cons_neg} will not bind. 
 
-This is a calculus of variations problem. The necessary conditions to solve it are \ref{margin_constraint}, \ref{iso_constraint}, and \(n\) Euler equations, one for each individual:
+This is a calculus of variations problem. Throughout its solution any dependency on \(x\) is suppressed. The necessary conditions to solve it are \ref{margin_constraint}, \ref{iso_constraint}, and \(n\) Euler equations, one for each individual:
 
 \begin{equation}
 \lambda = -\beta_j (v_j - p_j)^{\alpha - 1} \left[ \sum_{i=1}^n \beta_i (v_i - p_i)^\alpha \right]^{\frac{1- \alpha}{\alpha}} \quad \forall ~ j = 1, ..., n
 \end{equation}
 
-For the remainder of the derivation any dependency on \(x\) is suppressed. \(\lambda\) is the Lagrangian multiplier on the iso-perimetric constraint \ref{iso_constraint}. If we set the Euler equations for individuals 1 and 2 equal to each other, we get 
+\noindent \(\lambda\) is the Lagrangian multiplier on the iso-perimetric constraint \ref{iso_constraint}. If we set the Euler equations for individuals 1 and 2 equal to each other, we get 
 
 \[
 \left( \frac{\beta_1}{\beta_2} \right)^{\frac{1}{\alpha - 1}} (v_1 - p_1) = v_2 - p_2
 \]
 
-I will define \( \Omega_{12} = \left( \beta_1 / \beta_2 \right)^{\frac{1}{\alpha - 1}}\). Substituting this in and rearranging, we get
+\noindent I will define \( \Omega_{12} = \left( \beta_1 / \beta_2 \right)^{\frac{1}{\alpha - 1}}\). Substituting this in and rearranging, we get
 
 \[
 p_2 - \Omega_{12} p_1 = v_2 - \Omega_{12}v_1
 \]
 
-If we perform a similar manipulation among all \(n\) Euler conditions, we are left with a system of \(n-1\) equations
+\noindent If we perform a similar manipulation among all \(n\) Euler conditions, we are left with a system of \(n-1\) equations
 
 \begin{align*}
 p_2 - \Omega_{12} p_1 &= v_2 - \Omega_{12}v_1
@@ -175,23 +192,38 @@ p_3 - \Omega_{23} p_2 &= v_3 - \Omega_{23}v_2
 p_n - \Omega_{n-1,n} p_{n-1} &= v_n - \Omega_{n-1,n}v_{n-1}
 \end{align*}
 
-One way to ensure that the iso-perimetric constraint holds is to assume that the taxes levied at each marginal provision of the public good are always equal to the marginal cost of production.
+\noindent One way to ensure that the iso-perimetric constraint holds is to assume that the taxes levied at each marginal provision of the public good are always equal to the marginal cost of production.
 
 \begin{equation}
 p_1 + p_2 + ... + p_n = c
 \label{iso_simp}
 \end{equation}
 
-With this and the system of \(n-1\) equations above, we now have a system of \(n\) equations that we can use to solve for closed-form solutions of individualized price schedules (the full solution is detailed in the appendix). Those solutions are
+\noindent With this and the system of \(n-1\) equations above, we now have a system of \(n\) equations that we can use to solve for closed-form solutions of individualized price schedules (the full solution is detailed in the appendix). Those solutions are
 
 \begin{equation}
-p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}} \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}  \right]
+p_j =  \frac{c}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1- \alpha}}} + v_j -  \frac{\sum_{i =1}^n v_i}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} 
 \label{closed_p}
 \end{equation}
 
-Figure \ref{CES_plots} plots some examples of \ref{closed_p} in a two consumer setting for certain social welfare weights.
+In this solution, the optimal distribution of consumer surplus is sensitive to the parameters \(\alpha\), \(\beta_1\), and \(\beta_2\). For very large negative values of \(\alpha\) the weights become meaningless and society values the surplus of each individual equally. In the limit, consumer surpluses are perfect complements and we are left with the following tax schedules.
+
+\[
+p_j = \frac{c}{n} +v_j - \frac{1}{n}\sum_{i =1}^n v_i
+\]
+
+\noindent When society distributes consumer surplus equally it levies tax schedules with two components: individuals share the marginal cost of providing the public good at every margin of provision, and they are additionally taxed or subsidized according how much more or less they value each margin of provision relative to society' average valuation of that margin. 
+
+As \(\alpha\) approaches 0 from below, the weights begin to have an effect. In the summations of \ref{closed_p}, wherever \(\beta_j>\beta_i\) the summand becomes very large, and wherever \(\beta_j>\beta_i\)
+
+%why is most heavily weighted surplus getting no surplus? CES only defined for alpha<1, if alpha>1 you have a giffen good
+
+two effects manifest themselves. First,  \( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}\) becomes larger. If 
 
 
+Figure \ref{CES_plots} plots some examples of \ref{closed_p} in the same setting used to expose the unjustness of the classical Lindahl equilibrium in section \ref{CLE}: there are two consumers with \(v_1(x) = 20 - 2x\) and \(v_2(x) = 6 - 0.1x\), the marginal cost of providing the public good is 5, and a Pareto optimal amount of it is 10. \(\beta_1\) is 10 and \(\beta_2\) is 1. 
+
+% redo graphs for no alpha>1
 \begin{sidewaysfigure}
 \center{Price Schedules, Marginal Benefits, and Marginal Cost in a 2 Consumer Setting for Various Values of \(\alpha\)}
 \includegraphics[width = \textwidth]{lindahl_plots}
@@ -398,6 +430,11 @@ From the above pattern, it's clear that the closed form solution for any \(p_j\)
 p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}} \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}  \right]
 \end{equation}
 
+Inside the brackets, add \(0 = v_j \left( \frac{\beta_j}{\beta_j}\right)^{\frac{1}{\alpha - 1}} - v_j\) and rearrange to get:
+
+\begin{equation}
+p_j =  \frac{c}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} + v_j -  \frac{\sum_{i =1}^n v_i}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} 
+\end{equation}
 
 
 
