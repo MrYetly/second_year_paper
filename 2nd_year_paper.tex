@@ -171,25 +171,25 @@ This is a calculus of variations problem. Throughout its solution any dependency
 \noindent \(\lambda\) is the Lagrangian multiplier on the iso-perimetric constraint \ref{iso_constraint}. If we set the Euler equations for individuals 1 and 2 equal to each other, we get 
 
 \[
-\left( \frac{\beta_1}{\beta_2} \right)^{\frac{1}{\alpha - 1}} (v_1 - p_1) = v_2 - p_2
+\left( \frac{\beta_2}{\beta_1} \right)^\sigma (v_1 - p_1) = v_2 - p_2
 \]
 
-\noindent I will define \( \Omega_{12} = \left( \beta_1 / \beta_2 \right)^{\frac{1}{\alpha - 1}}\). Substituting this in and rearranging, we get
+\noindent Where \(\sigma = \frac{1}{1 - \alpha}\) is the elasticity of substitution between the surplus of any two individuals. I will define \( \Omega_{21} = \left( \beta_2 / \beta_1 \right)^\sigma\). Substituting this in and rearranging, we get
 
 \[
-p_2 - \Omega_{12} p_1 = v_2 - \Omega_{12}v_1
+p_2 - \Omega_{21} p_1 = v_2 - \Omega_{21}v_1
 \]
 
 \noindent If we perform a similar manipulation among all \(n\) Euler conditions, we are left with a system of \(n-1\) equations
 
 \begin{align*}
-p_2 - \Omega_{12} p_1 &= v_2 - \Omega_{12}v_1
+p_2 - \Omega_{21} p_1 &= v_2 - \Omega_{21}v_1
 \\
-p_3 - \Omega_{23} p_2 &= v_3 - \Omega_{23}v_2
+p_3 - \Omega_{32} p_2 &= v_3 - \Omega_{32}v_2
 \\
 &\vdots
 \\
-p_n - \Omega_{n-1,n} p_{n-1} &= v_n - \Omega_{n-1,n}v_{n-1}
+p_n - \Omega_{n,n-1} p_{n-1} &= v_n - \Omega_{n,n-1}v_{n-1}
 \end{align*}
 
 \noindent One way to ensure that the iso-perimetric constraint holds is to assume that the taxes levied at each marginal provision of the public good are always equal to the marginal cost of production.
@@ -202,26 +202,43 @@ p_1 + p_2 + ... + p_n = c
 \noindent With this and the system of \(n-1\) equations above, we now have a system of \(n\) equations that we can use to solve for closed-form solutions of individualized price schedules (the full solution is detailed in the appendix). Those solutions are
 
 \begin{equation}
-p_j =  \frac{c}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1- \alpha}}} + v_j -  \frac{\sum_{i =1}^n v_i}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} 
+p_j =  v_j - \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} \left[  \sum_{i =1}^n (v_i)  - c \right]
 \label{closed_p}
 \end{equation}
 
-In this solution, the optimal distribution of consumer surplus is sensitive to the parameters \(\alpha\), \(\beta_1\), and \(\beta_2\). For very large negative values of \(\alpha\) the weights become meaningless and society values the surplus of each individual equally. In the limit, consumer surpluses are perfect complements and we are left with the following tax schedules.
+In this solution, the optimal personalized tax schedule has two parts. Individuals are taxed at each margin according to their private valuation at that margin, \(v_j\). This baseline is then adjusted by what fraction of the marginal net social benefit (\( \sum_{i =1}^n (v_i)  - c\)) is redistributed back to them, as dictated by what share their social weights have in society (\(\beta_j\strut^\sigma / \sum_{i=1}^n \beta_i\strut^\sigma\)). The redistributive nature of the tax schedules is made clear when the marginal net benefit earned under them is stated:
 
 \[
-p_j = \frac{c}{n} +v_j - \frac{1}{n}\sum_{i =1}^n v_i
+b_j \equiv v_j - p_j = \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} \left[  \sum_{i =1}^n (v_i)  - c \right]
 \]
 
-\noindent When society distributes consumer surplus equally it levies tax schedules with two components: individuals share the marginal cost of providing the public good at every margin of provision, and they are additionally taxed or subsidized according how much more or less they value each margin of provision relative to society' average valuation of that margin. 
-
-As \(\alpha\) approaches 0 from below, the weights begin to have an effect. In the summations of \ref{closed_p}, wherever \(\beta_j>\beta_i\) the summand becomes very large, and wherever \(\beta_j>\beta_i\)
-
-%why is most heavily weighted surplus getting no surplus? CES only defined for alpha<1, if alpha>1 you have a giffen good
-
-two effects manifest themselves. First,  \( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}\) becomes larger. If 
+\noindent The baseline outcome is that individuals are taxed such that all of their surplus is taken away, and it is only the redistribution of net social benefit that leads to any individual being better off in the end. 
 
 
-Figure \ref{CES_plots} plots some examples of \ref{closed_p} in the same setting used to expose the unjustness of the classical Lindahl equilibrium in section \ref{CLE}: there are two consumers with \(v_1(x) = 20 - 2x\) and \(v_2(x) = 6 - 0.1x\), the marginal cost of providing the public good is 5, and a Pareto optimal amount of it is 10. \(\beta_1\) is 10 and \(\beta_2\) is 1. 
+For very small elasticities of substitution the complementarity of individuals' surplus in the eyes of society overrides their social weights. They are treated more of less equally. When \(\sigma = 0\), consumer surpluses are perfect complements and we are left with the following tax schedules.
+
+\[
+p_j = v_j - \frac{1}{n} \left[ \sum_{i =1}^n (v_i) - c \right]
+\]
+
+\noindent When society distributes consumer surplus equally, individuals are left with equal shares of the net social benefit at each margin of provision of the public good. When \(\sigma=1\) the original marginal social welfare function becomes a Cobb-Douglas function and the personalized tax schedules become
+
+\[
+p_j = v_j - \frac{\beta_j}{\sum_{i=1}^n \beta_i} \left[  \sum_{i =1}^n (v_i) - c \right]
+\]
+
+\noindent The weights now have an effect. An individual with a higher social weight now receives a larger share of the net social benefit at each margin. As \(\sigma \rightarrow \infty\), individuals' surpluses become perfect substitutes. Those with the highest social weight (\(j \in J_{max}\), where \( J_{max} \equiv \{j : \beta_j = \max \{\beta_i\}_1^n\}\)) equally share all of the marginal net social benefit, while those with lower weights receive none. 
+
+\[
+p_j = \begin{cases}
+v_j - \frac{1}{\left| J_{max} \right|} \left[ \sum_{i =1}^n (v_i) - c \right] & if ~ j \in J_{max} \\
+v_j & else
+\end{cases}
+\]
+
+%adjust footnote/headers of graphs from alpha to sigma
+
+Figure \ref{CES_plots} plots some examples of \ref{closed_p} for various values of \(\sigma\). I reuse the setting used to expose the unjustness of the classical Lindahl equilibrium in section \ref{CLE}: there are two consumers with \(v_1(x) = 20 - 2x\) and \(v_2(x) = 6 - 0.1x\), the marginal cost of providing the public good is 5, and a Pareto optimal amount of it is 10. \(\beta_1\) is 10 and \(\beta_2\) is 1. 
 
 % redo graphs for no alpha>1
 \begin{sidewaysfigure}
@@ -311,59 +328,59 @@ The solution will take place as follows: I will solve for \(p_1\) in terms of \(
 As stated, first solve for \(p_1\) 
 	
 \[
-p_1 = \frac{-v_2}{\Omega_{12}} + v_1 + \frac{p_2}{\Omega_{12}}
+p_1 = \frac{-v_2}{\Omega_{21}} + v_1 + \frac{p_2}{\Omega_{21}}
 \]
 
 \noindent Substitute into \ref{iso_simp}
 
 \[
-\left( \frac{-v_2}{\Omega_{12}} + v_1 + \frac{p_2}{\Omega_{12}} \right) + p_2 + p_3 + ... + p_n = c
+\left( \frac{-v_2}{\Omega_{21}} + v_1 + \frac{p_2}{\Omega_{21}} \right) + p_2 + p_3 + ... + p_n = c
 \]
 
 Combine terms, keeping prices and marginal benefits organized, and note that \(\Omega_{ij} = \Omega_{ji}^{-1}\). We get our first instance of a pattern.
 
 \[
-\left( 1 + \Omega_{21} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{21} v_2 = c
+\left( 1 + \Omega_{12} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{12} v_2 = c
 \]
 
 Iterating, solve for \(p_2\) in terms of \(p_3, v_2\) and \(v_3\) using the equation relating \(p_2\) to \(p_3\) from our system of equalities. Substitute into above.
 
 \[
-\left( 1 + \Omega_{21} \right) \left( \frac{-v_3}{\Omega_{23}} + v_2 + \frac{p_3}{\Omega_{23}} \right) + p_3 + p_4 + ... + p_n + v_1 -\Omega_{21} v_2 = c
+\left( 1 + \Omega_{12} \right) \left( \frac{-v_3}{\Omega_{32}} + v_2 + \frac{p_3}{\Omega_{32}} \right) + p_3 + p_4 + ... + p_n + v_1 -\Omega_{12} v_2 = c
 \]
 
 Combine terms again, and note that \(\Omega_{Ki} / \Omega_{Kj} = \Omega_{ij}\). A nice cancellation occurs. We get a second instance of the pattern.
 
 \[
-\left( 1 + \Omega_{32} + \Omega_{31} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+\left( 1 + \Omega_{23} + \Omega_{13} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{23} + \Omega_{13}) v_3 = c
 \]
 
 Iterate one last time, substituting for \(p_3\).
 
 \[
-\left( 1 + \Omega_{32} + \Omega_{31} \right) \left(  \frac{-v_4}{\Omega_{34}} + v_3 + \frac{p_4}{\Omega_{34}} \right) + p_4 + p_5 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+\left( 1 + \Omega_{23} + \Omega_{13} \right) \left(  \frac{-v_4}{\Omega_{43}} + v_3 + \frac{p_4}{\Omega_{43}} \right) + p_4 + p_5 + ... + p_n + v_1 + v_2 - (\Omega_{23} + \Omega_{13}) v_3 = c
 \]
 
 Combine terms, and we get a third instance of the pattern.
 
 \[
-\left( 1 + \Omega_{43} + \Omega_{42} + \Omega_{41} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{43} + \Omega_{42} + \Omega_{41}) v_4 = c
+\left( 1 + \Omega_{34} + \Omega_{24} + \Omega_{14} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{34} + \Omega_{24} + \Omega_{14}) v_4 = c
 \]
 
 Let's quickly look at all three instances of the pattern together.
 
 \begin{align*}
-&\left( 1 + \Omega_{21} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{21} v_2 = c
+&\left( 1 + \Omega_{12} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{12} v_2 = c
 \\
-&\left( 1 + \Omega_{32} + \Omega_{31} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{32} + \Omega_{31}) v_3 = c
+&\left( 1 + \Omega_{23} + \Omega_{13} \right) p_3 + p_4 + ... + p_n + v_1 + v_2 - (\Omega_{23} + \Omega_{13}) v_3 = c
 \\
-&\left( 1 + \Omega_{43} + \Omega_{42} + \Omega_{41} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{43} + \Omega_{42} + \Omega_{41}) v_4 = c
+&\left( 1 + \Omega_{34} + \Omega_{24} + \Omega_{14} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{34} + \Omega_{24} + \Omega_{14}) v_4 = c
 \end{align*}
 
 By extrapolation, and noting that \(\Omega_{ii} = 1\), \(p_n\) must be implicitly defined by
 
 \[
-p_n \sum_{i=1}^n \Omega_{ni} + \sum_{i=1}^{n-1} v_i - v_n \sum_{i=1}^{n-1} \Omega_{ni} = c
+p_n \sum_{i=1}^n \Omega_{in} + \sum_{i=1}^{n-1} v_i - v_n \sum_{i=1}^{n-1} \Omega_{in} = c
 \]
 
 Solving for \(p_n\), we get
@@ -377,63 +394,63 @@ To get a closed form solution for any \(p_i\), I'll first use 6 to solve for \(p
 First, solve for \(p_{n-1}\). We know that
 
 \[
-p_{n-1} = \frac{-v_n}{\Omega_{n-1,n}} + v_{n-1} + \frac{p_n}{\Omega_{n-1,n}}
+p_{n-1} = \frac{-v_n}{\Omega_{n,n-1}} + v_{n-1} + \frac{p_n}{\Omega_{n,n-1}}
 \]
 
 Substitute in 6. Step by step simplification:
 
 \begin{align*}
-p_{n-1} &= \frac{-v_n}{\Omega_{n-1,n}} + v_{n-1} + \frac{1}{\Omega_{n-1,n}} \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+p_{n-1} &= \frac{-v_n}{\Omega_{n,n-1}} + v_{n-1} + \frac{1}{\Omega_{n,n-1}} \left( \sum_{i=1}^n \Omega_{in} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in}\right]
 \\
-& =  - \Omega_{n,n-1} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{n-1, n} \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+& =  - \Omega_{n-1,n} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{n,n-1} \Omega_{in} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in}\right]
 \\
-& = - \Omega_{n,n-1} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+& = - \Omega_{n-1,n} v_n + v_{n-1} + \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in}\right]
 \\
-& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - \Omega_{n,n-1} v_n \sum_{i=1}^n \Omega_{n-1, i} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+& =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ - \Omega_{n-1,n} v_n \sum_{i=1}^n \Omega_{i, n-1} + v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in} \right]
 \\
-& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{n, i} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+& =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{in} + v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in} \right]
 \\
-&  =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{ni} + v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni} \right]
+&  =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ - v_n \sum_{i=1}^n \Omega_{in} + v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} + c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in} \right]
 \\
-& =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} + c - \sum_{i=1}^{n-1} v_i + v_n \left( \sum_{i=1}^{n-1} \Omega_{ni} - \sum_{i=1}^n \Omega_{ni} \right) \right]
+& =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} + c - \sum_{i=1}^{n-1} v_i + v_n \left( \sum_{i=1}^{n-1} \Omega_{in} - \sum_{i=1}^n \Omega_{in} \right) \right]
 \end{align*}
 
 At this point, we need to break steps down term by term. Note that the term in the parenthesis within the brackets equals -1, and that
 
 \[
-v_{n-1} \sum_{i=1}^n \Omega_{n-1, i} = v_{n-1} \left( 1 +\sum_{i \neq n-1} \Omega_{n-1, i} \right) =  v_{n-1} + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}
+v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} = v_{n-1} \left( 1 +\sum_{i \neq n-1} \Omega_{i, n-1} \right) =  v_{n-1} + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}
 \]
 
  The lone \(v_{n-1}\) will cancel with the final term in the \( \sum_{i=1}^{n-1} v_i \) summation. This leaves us with
  
  \[
- p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i} + c - \sum_{i=1}^{n-2} v_i - v_n \right]
+ p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1} + c - \sum_{i=1}^{n-2} v_i - v_n \right]
  \]
  
  Or
  
  \begin{equation}
- p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}  \right]
+ p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}  \right]
  \end{equation}
 
 Our closed form solution to \(p_{n-1}\). Finally let's compare 7 to 6.
 
 \begin{align*}
- &p_{n-1} =  \left( \sum_{i=1}^n \Omega_{n-1, i} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{n-1, i}  \right]
+ &p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}  \right]
 \\
-&p_n = \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+&p_n = \left( \sum_{i=1}^n \Omega_{in} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in}\right]
 \end{align*}
 
 From the above pattern, it's clear that the closed form solution for any \(p_j\) is
 
 \begin{equation}
-p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}} \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_j}{\beta_i}\right)^{\frac{1}{\alpha - 1}}  \right]
+p_j =  \left( \sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^\sigma \right)^{-1} \left[ c - \sum_{i \neq j} v_i + v_j \sum_{i \neq j} \left( \frac{\beta_i}{\beta_j}\right)^\sigma  \right]
 \end{equation}
 
-Inside the brackets, add \(0 = v_j \left( \frac{\beta_j}{\beta_j}\right)^{\frac{1}{\alpha - 1}} - v_j\) and rearrange to get:
+Inside the brackets, add \(0 = v_j \left( \frac{\beta_j}{\beta_j}\right)^\sigma - v_j\) and rearrange to get:
 
 \begin{equation}
-p_j =  \frac{c}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} + v_j -  \frac{\sum_{i =1}^n v_i}{\sum_{i=1}^n \left( \frac{\beta_i}{\beta_j}\right)^{\frac{1}{1 - \alpha}}} 
+p_j = c ~ \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} + v_j - \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma}  \sum_{i =1}^n v_i 
 \end{equation}
 
 
