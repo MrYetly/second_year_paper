@@ -212,7 +212,8 @@ In this solution, the optimal personalized tax schedule has two parts. Individua
 b_j \equiv v_j - p_j = \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} \left[  \sum_{i =1}^n (v_i)  - c \right]
 \]
 
-\noindent The baseline outcome is that individuals are taxed such that all of their surplus is taken away, and it is only the redistribution of net social benefit that leads to any individual being better off in the end. 
+\noindent The baseline outcome is that individuals are taxed such that all of their private surplus is taken away, and it is only the redistribution of net \textit{social} benefit that leads to any individual being better off in the end. 
+
 
 
 For very small elasticities of substitution the complementarity of individuals' surplus in the eyes of society overrides their social weights. They are treated more of less equally. When \(\sigma = 0\), consumer surpluses are perfect complements and we are left with the following tax schedules.
@@ -227,7 +228,7 @@ p_j = v_j - \frac{1}{n} \left[ \sum_{i =1}^n (v_i) - c \right]
 p_j = v_j - \frac{\beta_j}{\sum_{i=1}^n \beta_i} \left[  \sum_{i =1}^n (v_i) - c \right]
 \]
 
-\noindent The weights now have an effect. An individual with a higher social weight now receives a larger share of the net social benefit at each margin. As \(\sigma \rightarrow \infty\), individuals' surpluses become perfect substitutes. Those with the highest social weight (\(j \in J_{max}\), where \( J_{max} \equiv \{j : \beta_j = \max \{\beta_i\}_1^n\}\)) equally share all of the marginal net social benefit, while those with lower weights receive none. 
+\noindent The weights now have an effect because individuals' surpluses are substitutable. An individual with a higher social weight now receives a larger share of the net social benefit at each margin because it is optimal for society to substitute their surplus for others'. As \(\sigma \rightarrow \infty\), individuals' surpluses become perfect substitutes. Those with the highest social weight (\(j \in J_{max}\), where \( J_{max} \equiv \{j : \beta_j = \max \{\beta_i\}_1^n\}\)) receive all of the marginal net social benefit. Among these individuals, society is indifferent about the distribution of surplus. I shall assume that it is redistributed evenly among them.  Those with lower weights receive no redistribution. 
 
 \[
 p_j = \begin{cases}
@@ -236,50 +237,41 @@ v_j & else
 \end{cases}
 \]
 
-%adjust footnote/headers of graphs from alpha to sigma
 
 Figure \ref{CES_plots} plots some examples of \ref{closed_p} for various values of \(\sigma\). I reuse the setting used to expose the unjustness of the classical Lindahl equilibrium in section \ref{CLE}: there are two consumers with \(v_1(x) = 20 - 2x\) and \(v_2(x) = 6 - 0.1x\), the marginal cost of providing the public good is 5, and a Pareto optimal amount of it is 10. \(\beta_1\) is 10 and \(\beta_2\) is 1. 
 
-% redo graphs for no alpha>1
 \begin{sidewaysfigure}
-\center{Price Schedules, Marginal Benefits, and Marginal Cost in a 2 Consumer Setting for Various Values of \(\alpha\)}
+\center{Price Schedules, Marginal Benefits, and Marginal Cost in a 2 Consumer Setting for Various Values of \(\sigma\)}
 \includegraphics[width = \textwidth]{lindahl_plots}
-\caption{Above are several representations of price schedules leading to generalized Lindahl allocations for a setting with two individuals and various values of \(\alpha\). The marginal benefit functions are \(v_1(x) = 20 - 2x\), \(v_2(x)=6 - x/10\). Social welfare weights are \(\beta_1 = 10\) and \(\beta_2 = 1\). Marginal cost of providing the public good is 5, and the Pareto optimal amount of it is 10. Note that \(\alpha\) values of 0.9 and 1.1 are depicted because the weight ratios in 8 are raised to the power of \(1/(\alpha - 1)\). In the limit, approaching \(\alpha=1\) from the left or right leads to vastly difference results.}
+\caption{Above are several representations of price schedules leading to generalized Lindahl equilibria for a setting with two individuals and various values of \(\sigma\), the elasticity of substitution between the surpluses of any two individuals. The marginal benefit functions are \(v_1(x) = 20 - 2x\), \(v_2(x)=6 - x/10\). Social welfare weights are \(\beta_1 = 10\) and \(\beta_2 = 1\). Marginal cost of providing the public good is 5, and the Pareto optimal amount of it is 10.}
 \label{CES_plots}
 \end{sidewaysfigure}
 
 \section{Generalized Walker Mechanism}
 
-In this section I introduce a mechanism that, when implemented, induces a generalized Lindahl equilibrium.
+As is often the case in the theory of public goods, one of the strongest assumptions made here is that private valuations of the public good are known by the social planner. In an effort to relax this assumption, I now describe a mechanism a social planner could implement in order to obtain a Lindahl equilibrium without knowledge of individuals' private valuations. When this mechanism is implemented, it induces a generalized Lindahl equilibrium. In general, a mechanism is defined by the messages agents are allowed to choose and the outcome functions that convert these messages into outcomes. 
 
-\subsection{Mechanism}
-
-A mechanism is defined by the messages players are allowed to choose and the functions that convert these messages into outcomes. In our environment, an outcome is specified by a level of the public good \(x\) and a set of personalized tax schedules for each individual \(\tau_i\) such that each individual pays in total \(T_i(x) = \int_0^x \tau_i(t) dt\). A message sent by individual \(i\) is a continuous function \(p_i : \mathbb{R} \rightarrow \mathbb{R}\). A message profile \(\mathbf{p} = (p_1, ..., p_n)\) is the list of messages sent by all individuals. The mechanism processes a message profile with \(n+1\) outcome functions \(\mathcal{X} : \prod_i^n C(\mathbb{R}) \rightarrow \mathbb{R}\) and \(\mathcal{T}_i : \prod_i^n C(\mathbb{R}) \rightarrow C(\mathbb{R})\) for \(i = 1, ..., n\). \(\mathcal{X}\) determines the level of the public good 
+In our environment (with a slight change of notation) an outcome is specified by a level of the public good \(x\) and a set of personalized tax schedules for each individual \(\tau_i\) such that each individual pays in total \(T_i(x) = \int_0^x \tau_i(t) dt\). The messages sent by individuals \(i=1, ..., n\) are continuous functions \(p_i : \mathbb{R} \rightarrow \mathbb{R}\). The list of all of these messages is a message profile \(\mathbf{p} = (p_1, ..., p_n)\). There are \(n+1\) outcome functions, one to determined the provision of the public good,  \(\mathcal{X} : \prod_i^n C(\mathbb{R}) \rightarrow \mathbb{R}\), and \(n\) to determined what tax schedules are to be administered, \(\mathcal{T}_i : \prod_i^n C(\mathbb{R}) \rightarrow C(\mathbb{R})\). The functional forms of these outcome functions are
 	
-	\begin{equation}
-	\mathcal{X}(\mathbf{p}) = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
-	\label{oc_x}
-	\end{equation}
-
- \noindent And \(\mathcal{T}_i\) determines individual \(i\)'s personalized tax schedule.
-		
-	\begin{equation}
-	 \mathcal{T}_i(\mathbf{p}) = \frac{\beta}{n} + p_{i+2} - p_{i+1}
-	\label{oc_t}
-	\end{equation}
 	
-\noindent The subscript \(i + j\) is understood to be a modulo operation, \(n+j= j\). This mechanism defines a game form, adding preferences to it induces a game.
+\begin{align}
+\mathcal{X}(\mathbf{p}) &= \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm \label{oc_x} \\
+\mathcal{T}_i(\mathbf{p}) &= \frac{c}{n} + p_{i+2} - p_{i+1} \label{oc_t} 
+\end{align}	
+	
+\noindent Note that the subscript \(i + j\) is understood to be a modulo operation, \(n+j= j\), and \(c\) is once again the marginal cost of the public good.
 
+ This mechanism defines a game form: when preferences are added to it a game is induced. The outcome functions \ref{oc_x} and \ref{oc_t} each are designed to influence what strategies are used to satisfy these preferences in such a game. First, when all other messages \(p_{-j}\) are taken as given, \ref{oc_x} allows any individual message \(p_j\) to demand a certain level of the public good: no matter what function results from \(\sum_{i \neq j} p_i(m)\), the addition of \(p_j\) can create an integrand \(\sum_{i=1}^n p_i(m)\) such that \(\mathcal{X}(\mathbf{p})\) produces any outcome \(x\) a individual \(j\) desires. Second, \ref{oc_t} states that the tax schedule that will be administered to any individual does not depend on their own message. In tandem, these two outcome functions mean that a utility optimizing agent playing a game induced by this mechanism only has one margin of optimization, the public good. I now add the preferences from the economic setting described in section \ref{CLE} in order to induce and analyze the resulting game.
 
 \begin{proposition}
 At any Nash equilibrium induced by our mechanism, any equilibrium outcome \((\vec{\tau}, x)\) coincides with a generalized Lindahl outcome and is Pareto optimal.
 \end{proposition}
 
 \begin{proof}
-To be a generalized Lindahl outcome, each individual must be given a personal price schedule, the cost of providing the public good must be covered, and the allocation \((\vec{\tau}, x)\) must be individually rational and Pareto optimal. To begin, each player faces the following utility maximization problem:
+To be a generalized Lindahl outcome, each individual must be given a personal tax schedule, the cost of providing the public good must be covered, and the allocation \((\vec{\tau}, x)\) must be individually rational and Pareto optimal. If the budget constraint of a player is \(\int_0^x p_i(t) dt + y_i = \omega_i \) and their utility function is \(u_i(x, y_i)\), then each player faces the following utility maximization problem:
 
 \begin{align*}
-&\max_{p_i(x)} ~u_i \left( \omega_i - \int_0^x \tau_i(t) dt, x \right)
+&\max_{p_i(x)} ~u_i \left( x, \omega_i - \int_0^x \tau_i(t) dt\right)
 \\
 &s.t.~ x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
 \end{align*}
@@ -287,7 +279,7 @@ To be a generalized Lindahl outcome, each individual must be given a personal pr
 \noindent or
 
 \begin{align*}
-&\max_{p_i(x)} ~ u_i \left( \omega_i - \int_0^x \left[ \frac{\beta}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt, x \right) \numberthis 
+&\max_{p_i(x)} ~ u_i \left( x, \omega_i - \int_0^x \left[ \frac{\beta}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt \right) \numberthis 
 \\
 &s.t.~ x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm
 \end{align*}
@@ -298,13 +290,20 @@ The problem can be simplified further, as a choice over \(x\). The objective fun
 \max_x ~ u_i \left( \omega_i - \int_0^x \left[ \frac{\beta}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt, x \right) 
 \end{equation}
 
-The first order condition for utility maximization is: 
+\noindent The first order condition for utility maximization is: 
 
 \begin{align*}
 \frac{u_{i, x}}{u_{i, y_i}} &= \frac{\beta}{n} + p_{i+2}(x) - p_{i+1}(x) \numberthis \label{foc}
 \end{align*}
 
-\noindent A best responding individual submits a message \(p_i\) such that the level of the public good it demands is optimal given their personalized price at the margin. 
+\noindent Remember that, even though the utility maximization problem was simplified into a choice over \(x\), the optimal level of the public good demanded \(x^*\) uniquely and implicity defines an optimal message \(p_j^*\) via the outcome function \ref{oc_x}: 
+
+\[
+x^* = \argmax_{t \geq 0} \int_o^t \left( p_j^*(m) + \sum_{i \neq j} p_i(m) \right) dm
+\]
+
+
+\noindent So, equation \ref{foc} states that in a Nash equilibrium a best responding individual submits a message \(p_i\) such that the level of the public good it implicitly demands is optimal given their personalized tax at the margin. If we assume that \(u_i\) is quasi-concave then \ref{foc} defines a global maximum, and we can state that a Nash equilibrium is individually rational for all players to accept. 
 
 The sum of all \(n\) first order conditions is 
 
@@ -314,7 +313,9 @@ The sum of all \(n\) first order conditions is
 \label{eq}
 \end{equation}
 
-\noindent Because of the modulo dependence of the personalized prices, the sum of all personalized prices equals marginal cost at every marginal provision of the public good. The cost of providing \(x\) will always be covered. At any Nash equilibrium, any equilibrium outcome is a generalized Lindahl outcome: the outcome provides individualized price schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. 
+\noindent The modulo dependence of the personalized taxes creates a cancellation that leads to two important results. First, the sum of all marginal rates of substitution are equal to the marginal cost of provision: the outcome is Pareto optimal. Second, the sum of all personalized taxes equals marginal cost at every marginal provision of the public good, so the cost of providing \(x\) will always be covered. 
+
+Any Nash equilibrium of the game induced by our mechanism is a generalized Lindahl outcome: the outcome provides individualized tax schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. This concludes the proof
 
 \end{proof}
 
