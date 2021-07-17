@@ -54,9 +54,9 @@ We shall assume that there is a unique Pareto optimal allocation in the economy,
 
 \subsection{Classical Lindahl Equilibrium} \label{CLE}
 
-An unregulated market cannot efficiently provide a public good. A firm cannot earn revenue by selling the right to consume a public good because it cannot prevent the consumption of a public good by those who have not paid for it. Consumers face a strong incentive not pay for the provision of a public good because once the public good is provided the consumption of it by one individual does not prevent the consumption of it by another. These are the usual non-rival and non-excludable characteristics associated with a public good. Some sort of market regulation is required to elicit and finance the efficient provision of the public good. Individuals can be taxed and production can be centralized by a government. One theoretical equilibrium that allows a Pareto optimal amount of the public good to be provided is a classical Lindahl equilibrium.
+An unregulated market cannot efficiently provide a public good. A firm cannot earn revenue by selling the right to consume a public good because it cannot prevent the consumption of a public good by those who have not paid for it. Consumers face a strong incentive not pay for the provision of a public good because once the public good is provided the consumption of it by one individual does not prevent the consumption of it by another. These are the usual non-rival and non-excludable characteristics of a public good. Some sort of market regulation is required to elicit and finance the efficient provision of the public good. Individuals can be taxed and production can be centralized by a government. One theoretical equilibrium that allows a Pareto optimal amount of the public good to be provided is a classical Lindahl equilibrium.
 
-A classical Lindahl equilibrium uses individualized taxes, known as Lindahl prices, to raise revenue for the provision of a public good. It finds the socially optimal level of the public good and then charges each customer their marginal valuation of the public good at the socially optimal level. With constant marginal costs of provision and downward sloping demand curves, a classical Lindahl equilibrium ensures that it is individually rational for individuals to pay the tax levied upon them and that the sum of such taxes exactly covers the provision of the public good. 
+A classical Lindahl equilibrium uses individualized taxes, known as Lindahl prices, to raise revenue for the provision of a public good. It finds the socially optimal level of the public good and then charges each consumer their marginal valuation of the public good at the socially optimal level. With constant marginal costs of provision and downward sloping demand curves, a classical Lindahl equilibrium ensures that it is individually rational for individuals to pay the tax levied upon them and that the sum of such taxes exactly covers the provision of the public good. 
 
 For example, consider an instance of the economic setting outlined above with \(n=2\), \(c=5\), and the following utility functions for the two individuals 
 
@@ -91,7 +91,7 @@ A classical Lindahl equilibrium must be individually rational and raise tax reve
 
 The unjustness of the classical result can be thought of as a result of the linearity of prices faced by consumers. Consumers are charged one personalized tax across all margins of consumption of the public good; the surplus they attain at each margin is then the difference between their marginal valuations and these constant taxes. If those taxes were non-linear, a more equitable outcome could be achieved. A tax schedule could be created such that the equity of the benefits accruing to each consumer at each margin of provision of the public good were taken into account. This allowance for non-linear taxation \textit{is} the generalization of the classical Lindahl equilibrium that constitutes the purpose of this paper.  
 
-A generalized Lindahl equilibrium sees each customer receive a personalized tax schedule, instead of a single personalized tax. The outcome is still individually rational and covers the cost of provision, as in the classical case, but now a central planner or government can manipulate the personalized price schedules to distribute consumer surplus as they see fit. 
+A generalized Lindahl equilibrium sees each consumer receive a personalized tax schedule, instead of a single personalized tax. The outcome is still individually rational and covers the cost of provision, as in the classical case, but now a central planner or government can manipulate the personalized price schedules to distribute consumer surplus as they see fit. 
 
 \begin{definition}
 A profile of individualized price schedules induces a generalized Lindahl equilibrium if it is (1) individually rational for each individual to demand the Pareto optimal amount of the public good and (2) if the cost of providing the public good is exactly covered by taxes paid by each individual. 
@@ -120,7 +120,6 @@ u_i(x^{PO}, y_i(x^{PO})) \geq u_i(0, y_i(0))
 \label{gen_ir2}
 \end{equation}
 
-%why not state sufficient condition for IR?
 
 \noindent And finally, for the tax revenues to cover the cost of provision, we must have
 
@@ -284,7 +283,7 @@ To be a generalized Lindahl outcome, each individual must be given a personal ta
 &s.t.~ x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm \numberthis \label{x_cons}
 \end{align*}
 
-The problem can be simplified further, as a choice over \(x\). The objective function does not \textit{directly} depend on an individual's choice of message \(p_i\), but the amount of the public good provided does, via the constraint \ref{x_cons}: if a player understands x is chosen according to \ref{x_cons}, then they understand that the following first order condition \(\sum_{i=1}^n p_i(x) = 0\) must hold. Given any set of messages submitted by other individuals, a single individual can submit a \(p_i\) such that the maximumizing argument of \ref{x_cons} is any positive real number, \(x\). Only by this level of \(x\) does \(p_i\) affect their utility.  
+The problem can be simplified further, as a choice over \(x\). The objective function does not \textit{directly} depend on an individual's choice of message \(p_i\), but the amount of the public good provided does, via the constraint \ref{x_cons}: if a player understands \(x\) is chosen according to \ref{x_cons}, then they understand that the following first order condition \(\sum_{i=1}^n p_i(x) = 0\) must hold. Each player takes all other messages \(p_{-i}\) as given, and submits a \(p_i\) such that the maximizing argument of \ref{x_cons} is the \(x\) they deem optimal. Only by this level of \(x\) does \(p_i\) affect their utility; the problem can be rewritten as:
 
 \begin{equation}
 \max_x ~ u_i \left( \omega_i - \int_0^x \left[ \frac{c}{n} + p_{i+2}(t) - p_{i+1}(t) \right] dt, x \right) 
@@ -296,9 +295,13 @@ The problem can be simplified further, as a choice over \(x\). The objective fun
 \frac{u_{i, x}(y(x), x)}{u_{i, y_i}(y(x),x)} &= \frac{c}{n} + p_{i+2}(x) - p_{i+1}(x) \numberthis \label{foc}
 \end{align*}
 
-\noindent Equation \ref{foc} states that in a Nash equilibrium a best responding individual submits a message \(p_i\) such that the level of the public good it implicitly demands is optimal given their personalized tax at the margin. If we assume that \(u_i\) is quasi-concave then \ref{foc} defines a global maximum, and we can state that a Nash equilibrium is individually rational for all players to accept. 
+\noindent Equation \ref{foc} states that in a Nash equilibrium a best responding individual submits a message \(p_i\) such that the level of the public good the message implicitly demands equates their marginal rate of substitution to their personalized tax at the margin demanded. If we assume that \(u_i\) is quasi-concave (we can't, sign/magnitude of \(p_{i+2} - p_{i+1}\) matters) then \ref{foc} defines a global maximum, and we can state that a Nash equilibrium is individually rational for all players to accept. 
+
+%need proof of quasi-concavity argument, SOC?
 
 Note that the best response message \(p_i\) is not unique. \ref{foc} only applies at a single point, the level of the public good provided.  This is true because the only feature of \(p_i\) relevant to utility maximization is where it dictates \(\sum_{i=1}^n p_i(x) = 0\). Consequently, this is also the only feature relevant to the achievement of a Nash equilibrium. Therefore, a best response \(p_i\) could be any integrable function that satisfies the point constraint \ref{foc}.
+ 
+%is global maximum (SOC) required to say that messages pi are not unique? 
  
 The sum of all \(n\) first order conditions is 
 
@@ -307,9 +310,9 @@ The sum of all \(n\) first order conditions is
 \label{eq}
 \end{equation}
 
-\noindent The modulo dependence of the personalized taxes creates a cancellation that leads the sum of all marginal rates of substitution are equal to the marginal cost of provision: the outcome is Pareto optimal. 
+\noindent The modulo dependence of the personalized taxes creates a cancellation that leads to the sum of all marginal rates of substitution equalling the marginal cost of provision: the outcome is Pareto optimal. 
 
-The final qualification left to prove is that the cost of provision is covered. This is true via the construction of the personalized tax outcome function. No matter what messages are submitted, the sum of all tax schedules \(\tau_i\)equals marginal cost at every single margin. 
+The final qualification left to prove is that the cost of provision is covered. This is true via the construction of the personalized tax outcome function. No matter what messages are submitted, the sum of all tax schedules \(\tau_i\) equals marginal cost at every single margin, \(\sum_{i=1}^n \tau_i = c\). 
 
 Any Nash equilibrium of the game induced by our mechanism is a generalized Lindahl outcome: the outcome provides individualized tax schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. This concludes the proof
 
@@ -320,7 +323,9 @@ Any generalized Lindahl outcome \((\vec{\tau}, x)\) can be achieved in a Nash eq
 \end{proposition}
 
 \begin{proof}
-Suppose we have a generalized Lindahl outcome \((\vec{\tau}, x)\). Note that this means that \(x\) \textit{is} the Pareto optimal amount of the public good, so it is a best response for each individual to submit a message such that the outcome functions \ref{oc_x} and \ref{oc_t} provide \(x\). With this in mind, if we show that a profile of messages \(\mathbf{p}\) is capable of generating an outcome \((\vec{\tau}, x)\) via \ref{oc_x} and \ref{oc_t}, we have shown that the generalized Lindahl equilibrium that led to \ref{oc_x} and \ref{oc_t} is a Nash equilibrium in a game induced by the mechanism. 
+Suppose we have a generalized Lindahl outcome \((\vec{\tau}, x)\). Note that this means that \(x\) is the Pareto optimal amount of the public good, so it is a best response for each individual to submit a message such that the outcome functions \ref{oc_x} and \ref{oc_t} provide \(x\). With this in mind, if we show that a profile of messages \(\mathbf{p}\) is capable of generating an outcome \((\vec{\tau}, x)\) via \ref{oc_x} and \ref{oc_t}, we have shown that the generalized Lindahl equilibrium that led to \ref{oc_x} and \ref{oc_t} is a Nash equilibrium in a game induced by the mechanism. 
+
+% does pareto optimality really lead to best response?
 
 This proof again follows Walker (1981). From \ref{oc_x} and \ref{oc_t}, we can say we have the following system of \(n\) equations:
 
@@ -333,9 +338,11 @@ x &= \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm \\
 \tau_{n-2} - \frac{c}{n} &= p_n - p_{n-1} \\
 \end{align*}
 
-And now we are aided by the fact that a correspondence of \(\mathbf{p}\) is capable of producing a Nash equilibrium. The above system has \(n\) unknowns \(p_i\). To define a unique profile \(\mathbf{p}\) defined across all margins of the public good, we would need \(n\) linearly independent equations that provide structure across all such margins.This system only has \(n-1\) such equations: the functions \(\tau_i - \frac{c}{n} = p_{i+2} - p_{i+1}\). The \(n^{th}\) equation \(x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm\) only has information on a single margin, the last margin provided. But, this is all the information that is needed to construct a correspondence of profiles \(\mathbf{p}\) that is capable of achieving a Nash equilibrium. Thus any generalized Lindahl equilibrium can be achieved in a Nash equilibrium of a game induced by the mechanism by a correspondence of \(\mathbf{p}\).
+And now we are aided by the fact that a correspondence of \(\mathbf{p}\) is capable of producing a Nash equilibrium. The above system has \(n\) unknowns \(p_i\). To define a unique profile \(\mathbf{p}\) defined across all margins of the public good, we would need \(n\) linearly independent equations that provide structure across said margins. This system only has \(n-1\) such equations: the functions \(\tau_i - \frac{c}{n} = p_{i+2} - p_{i+1}\). The \(n^{th}\) equation, \(x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm\), only has information on a single margin, the last margin provided. But, this is all the information that is needed to construct a correspondence of profiles \(\mathbf{p}\) that is capable of achieving a Nash equilibrium. Thus any generalized Lindahl equilibrium can be achieved in a Nash equilibrium of a game induced by the mechanism by a correspondence of \(\mathbf{p}\).
 
 \end{proof}
+
+There is no generalized Lindahl equilibrium the mechanism cannot create, and every equilibrium of the mechanism is a generalized Lindahl equilibrium. 
 
 \section{Discussion}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 JUL 2021 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  9 JUL 2021 13:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -257,16 +257,16 @@ Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 77.
 <lindahl_plots.pdf, id=82, 1300.86pt x 722.7pt>
 File: lindahl_plots.pdf Graphic file (type pdf)
 <use lindahl_plots.pdf>
-Package pdftex.def Info: lindahl_plots.pdf  used on input line 245.
+Package pdftex.def Info: lindahl_plots.pdf  used on input line 244.
 (pdftex.def)             Requested size: 550.0pt x 305.56099pt.
  [8] [9 <./lindahl_plots.pdf>] [10] [11]
 [12] [13]
-Overfull \hbox (12.55836pt too wide) detected at line 397
+Overfull \hbox (12.55836pt too wide) detected at line 404
 []
  []
 
 
-Overfull \hbox (56.28326pt too wide) detected at line 435
+Overfull \hbox (56.28326pt too wide) detected at line 442
 []
  []
 
@@ -296,7 +296,7 @@ ts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on 2nd_year_paper.pdf (16 pages, 240121 bytes).
+Output written on 2nd_year_paper.pdf (16 pages, 240398 bytes).
 PDF statistics:
  206 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
