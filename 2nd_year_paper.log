@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  26 JUL 2021 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  26 JUL 2021 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,6 +195,9 @@ LaTeX Warning: Label `' multiply defined.
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `2nd_year_paper.aux'.
 
@@ -248,39 +251,46 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4]
-<classical_lindahl_plots.pdf, id=29, 578.16pt x 433.62pt>
+ [4] [5]
+<classical_lindahl_plots.pdf, id=32, 578.16pt x 433.62pt>
 File: classical_lindahl_plots.pdf Graphic file (type pdf)
 <use classical_lindahl_plots.pdf>
-Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 108.
+Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 111.
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
- [5]
+
 [6 <./classical_lindahl_plots.pdf>] [7] [8] [9] [10]
 <lindahl_plots.pdf, id=92, 1300.86pt x 722.7pt>
 File: lindahl_plots.pdf Graphic file (type pdf)
 <use lindahl_plots.pdf>
-Package pdftex.def Info: lindahl_plots.pdf  used on input line 275.
+Package pdftex.def Info: lindahl_plots.pdf  used on input line 278.
 (pdftex.def)             Requested size: 550.0pt x 305.56099pt.
- [11] [12 <./lindahl_plots.pdf>] [13] [14] [15]
-Overfull \hbox (12.55836pt too wide) detected at line 411
+ [11] [12 <./lindahl_plots.pdf>] [13] [14]
+Overfull \hbox (8.1082pt too wide) in paragraph at lines 364--365
+[]\OT1/cmr/m/n/10 For ex-am-ple, sup-pose we have a GLE de-scribed by ($\OML/cm
+m/m/it/10 ^^\[]; :::; ^^\[]$\OT1/cmr/m/n/10 ) and ($\OML/cmm/m/it/10 x; y[]; ::
+:; y[]$\OT1/cmr/m/n/10 ),
+ []
+
+[15]
+Overfull \hbox (12.55836pt too wide) detected at line 440
 []
  []
 
-
-Overfull \hbox (56.28326pt too wide) detected at line 449
+[16]
+Overfull \hbox (56.28326pt too wide) detected at line 478
 []
  []
 
-[16] [17] [18] [19] (./2nd_year_paper.aux)
+[17] [18] [19] [20] (./2nd_year_paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2594 strings out of 478994
- 34351 string characters out of 5858184
- 333926 words of memory out of 5000000
- 20059 multiletter control sequences out of 15000+600000
+ 2593 strings out of 478994
+ 34348 string characters out of 5858184
+ 333922 words of memory out of 5000000
+ 20058 multiletter control sequences out of 15000+600000
  414423 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,10n,88p,2321b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -302,10 +312,10 @@ ive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
 021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on 2nd_year_paper.pdf (19 pages, 255818 bytes).
+Output written on 2nd_year_paper.pdf (20 pages, 261111 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 225 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

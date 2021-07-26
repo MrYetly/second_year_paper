@@ -49,7 +49,7 @@ Discussion: we have proved the first welfare theorem but not the second?
 	
 	\item preview of results
 	
-	Our generalized Lindahl equilibrium has the Pareto optimality, individual rationality, and balanced budget of the classical result. In addition, it requires that each consumer must be given a personalized tax schedule instead of a single tax. If the preferences of a society concerning the surplus of its citizens can be represented by a social welfare function, this new margin of control allows those preferences to be included when calculating how to optimally provide a public good. We define the general form of such a problem and then solve an example with a CES welfare function. We then propose a mechanism for implementing generalized Lindahl equilibria when a central provider of the public good has incomplete information, and show that all of the Nash equilibria of games induced by this mechanism are generalized Lindahl equilibria.
+	Our generalized Lindahl equilibrium has the Pareto optimality, individual rationality, and balanced budget of the classical result. In addition, it requires that each consumer must be given a personalized tax schedule instead of a single tax. If the preferences of a society concerning the surplus of its citizens can be represented by a social welfare function, this new margin of control allows those preferences to be included when calculating how to optimally provide a public good. We define the general form of such a problem and then solve an example with a CES welfare function. We then propose a mechanism for implementing generalized Lindahl equilibria when a central provider of the public good has incomplete information, and show that all of the Nash equilibria of games induced by this mechanism are generalized Lindahl equilibria. This mechanism is inspired by Walker's (1981) and so is called a generalized Walker mechanism.
 	
 		
 	\item lit review
@@ -65,10 +65,13 @@ Discussion: we have proved the first welfare theorem but not the second?
 	
 	
 	\item structure
+	
+	The rest of this paper is structured as follows. Section 2 introduces the economic setting used throughout the paper, and describes a classical Lindahl equilibrium in this setting. Section 3 introduces the concept of generalized Lindahl equilibrium and shows how the concept can be used to solve a welfare maximization problem with a CES welfare function. Section 4 describes what we call a generalized Walker mechanism, and proves that it implements a generalized Lindahl equilibrium. Section 5 discusses the direction of future research. Section 6 concludes.
+	
 \end{itemize}
 
 
-\section{Model}
+\section{Setting}
 
 A fairly simple economic environment will provide an adequate setting. There will be \(i = 1, ..., n \geq 2\) individuals in the economy, each represented by a convex consumption set \(C_i = \mathbb{R}_i^2\) and an initial endowment of a private good \(\omega_i > 0\). They consume bundles of a public good \(x\) a private good \(y_i\), and in doing so gain utility according to utility functions of the following form.
 
@@ -328,11 +331,9 @@ The problem can be simplified further, as a choice over \(x\). The objective fun
 
 \noindent Equation \ref{foc} states that in a Nash equilibrium a best responding individual submits a message \(p_i\) such that the level of the public good the message implicitly demands equates their marginal rate of substitution to their personalized tax at the margin demanded. If we assume that \(u_i\) is quasi-concave (we can't, sign/magnitude of \(p_{i+2} - p_{i+1}\) matters) then \ref{foc} defines a global maximum, and we can state that a Nash equilibrium is individually rational for all players to accept. 
 
-%need proof of quasi-concavity argument, SOC?
 
 Note that the best response message \(p_i\) is not unique. \ref{foc} only applies at a single point, the level of the public good provided.  This is true because the only feature of \(p_i\) relevant to utility maximization is where it dictates \(\sum_{i=1}^n p_i(x) = 0\). Consequently, this is also the only feature relevant to the achievement of a Nash equilibrium. Therefore, a best response \(p_i\) could be any integrable function that satisfies the point constraint \ref{foc}.
  
-%is global maximum (SOC) required to say that messages pi are not unique? 
  
 The sum of all \(n\) first order conditions is 
 
@@ -349,10 +350,38 @@ Any Nash equilibrium of the game induced by our mechanism is a generalized Linda
 
 \end{proof}
 
-
-
 \section{Discussion}
 
+
+	So far we have shown that any Nash equilibrium implemented by our mechanism is a generalized Lindahl equilibrium. For completeness, we would like to prove the following as well.
+	
+\begin{proposition}
+A generalized Lindahl equilibrium can be implemented by a unique Nash equilibrium of a game induced by a generalized Walker mechanism.
+\end{proposition}
+	
+	This would theoretically allow a social planner to create a mechanism that picks whatever generalized Lindahl outcome it prefers. The generalized Walker mechanism we currently have will have to be adjusted to elicit more information in order to do this. If we follow Walker (1981) to attempt to prove proposition 2 (as we followed him to prove proposition 1) we find that our outcome functions \ref{oc_x} and \ref{oc_t} do not provide enough structure. 
+	
+	For example, suppose we have a GLE described by (\(\tau_1, ..., \tau_n\)) and (\(x, y_1, ..., y_n\)), and our two outcome functions. With this information, we can construct the following system of equations.
+	
+\begin{align*}
+\argmax_{t \geq 0} \int_0^t \sum_{i=1}^n p_i(m) dm &= x \\
+p_2 - p_1 &= \tau_n - \frac{c}{n} \\
+p_3 - p_2 &= \tau_1 - \frac{c}{n} \\
+\vdots& \\
+p_n - p_{n-1} &= \tau_{n-2} - \frac{c}{n} 
+\end{align*}
+	
+If this system implicitly defines a unique set of messages (\(p_1, ...,p_n\)), then that set of messages uniquely implements the GLE described by (\(\tau_1, ..., \tau_n\)) and (\(x, y_1, ..., y_n\)). Unfortunately, this system does not have enough information to do so. The messages are functions, and so need to be defined across all margins of provision to be unique. The \(n-1\) personalized tax equations provide such definitions, but the outcome function that dictates the level of the public good is only defined on a single margin, \(x\). The only constraint it puts on the messages is that their sum must equal zero at \(x\). Consequently, this mechanism implements an infinite number of Nash equilibria capable of achieving any single generalized Lindahl equilibrium. 
+
+This issue arises from the fact that an individual's message \(p_i\) only affects their utility through the level of \(x\) it implicitly chooses (as stated in the proof in section 4). This simplification helped prove proposition 1, but it handicaps our ability to prove proposition 2. 
+
+To correct this issue, we are considering expanding the message space to include both a function \(p_i\) and a scalar \(\chi_i\). This would allow a player's message to pick a level of the public good independently of their submitted function. This additional information should provide the structure we need to carry out both directions of proof.
+	
+
+
+
+
+\section{Conclusion}
 
 \section{Appendix}
 
@@ -514,7 +543,7 @@ p_j =  v_j - \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} \lef
 
 \bibitem{} Van Essen, Matthew J. "A simple supermodular mechanism that implements Lindahl allocations." Journal of Public Economic Theory 15.3 (2013): 363-377.
 
-\bibitem Varian, Hal R. "A solution to the problem of externalities when agents are well-informed." The American Economic Review (1994): 1278-1293.
+\bibitem{} Varian, Hal R. "A solution to the problem of externalities when agents are well-informed." The American Economic Review (1994): 1278-1293.
 
 \bibitem{} Varian, Hal R. "Sequential contributions to public goods." Journal of Public Economics 53.2 (1994): 165-186.
 
