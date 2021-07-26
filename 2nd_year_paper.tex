@@ -12,29 +12,60 @@
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
 \title{2nd year paper}
-\author{Ivan Anich}
+\author{Ivan Anich and Matt Van Essen}
 
 \begin{document}
 \maketitle
 
-\section*{outline}
 
-\begin{enumerate}
-	\item Intro and Lit Review - Work on this section last. For the literature review I would focus on Walker (1981) and the Varian paper I gave you earlier this year. 
-	\item Model - Define economic environment and assumptions on the utility functions/ production function/ etc. Use my draft as your main guide. 
-	\item Generalized Lindahl Equilibrium - Define Generalized Lindahl Equilibria and provide an example (Rawlsian). 
-	\item Generalized Walker Mechanism - define the mechanism and give your main result. 
-	\item Discussion - I would talk about what you still need to do. For example, the other half of the mechanism result (all G. Lindahl Outcomes are achievable as NE of the game). Also, the set of NE is very large, we need to find a way to enforce a single outcome. 
-\end{enumerate}
-
-\section*{To do}
-
-\begin{itemize}
-	\item Lit Review
-	\item REference work done jointly w/ Van Essen
-\end{itemize}
 
 \section{Introduction}
+
+What is the hole we are filling? (first to use a SWF in the allocation of public goods? And this is enabled by the generalized lindahl equilibrium concept)(How to improve mechanism design? That’s what research is ...)
+
+Because we allow consumer surplus to be taken into account, we can use a social welfare function when determining the optimal tax schedule (but doesn’t Ramsey pricing do this?)
+
+Discussion: we have proved the first welfare theorem but not the second?
+
+\begin{itemize}
+	\item big picture
+	
+	
+	Public goods are an unusual economic subject in that they require we consider what is just, a normative topic in a field that usually focuses on the positive. Lindahl's (1919 [1958]) classical result concerning the optimal allocation of public goods is an opinion about what is just. He argues that a just outcome in the presence of a public good (hereafter a classical Lindahl outcome, or CLE) is one that provides the Pareto optimal level of the public good, raises individually rational taxes to finance the public good, and does so such that the taxes raised exactly equal the cost of the public good.
+	
+	
+	
+	
+	
+	
+	
+	
+	\item contribution
+	
+	This concept has become a standard by which theories of the provision of public goods are measured, yet it is inadequate. It does not take into account the distribution of surplus created by the taxes it proscribes. As we show, this uncontrolled margin allows for outcomes that we argue are unjust. In order to build a more rigorous standard, we introduce the concept of a generalized Lindahl equilbrium (GLE).
+	
+	
+	
+	
+	\item preview of results
+	
+	Our generalized Lindahl equilibrium has the Pareto optimality, individual rationality, and balanced budget of the classical result. In addition, it requires that each consumer must be given a personalized tax schedule instead of a single tax. If the preferences of a society concerning the surplus of its citizens can be represented by a social welfare function, this new margin of control allows those preferences to be included when calculating how to optimally provide a public good. We define the general form of such a problem and then solve an example with a CES welfare function. We then propose a mechanism for implementing generalized Lindahl equilibria when a central provider of the public good has incomplete information, and show that all of the Nash equilibria of games induced by this mechanism are generalized Lindahl equilibria.
+	
+		
+	\item lit review
+	
+	The literature concerning the theory of public goods has both economic and philosophical beginnings. As mentioned, the work of Lindahl (1919 [1958]) has influenced this paper the most. He asked, when two parties have equal political power but differing valuations of a public good, what level of the public good should be provided, and how should the cost of producing it be shared between the two? He argued that cost shares should be determined by the parties’ marginal valuations of public good at the level it is provided, and that the level provided should be that which maximizes the net gain of both parties. Beyond Lindahl there were the political philosophical considerations of Wicksell (1896 [1958]). He pointed out that the definition of justice is itself a problem, and argues for a simple solution, unanimity: in order to achieve economic justice, a society should unanimously choose both how public funds should be spent and how the burden of raising those funds should be shared by its constituents. Both Wicksell and Lindahl believed the burden placed on any individual should be proportional to the benefit they received from public spending. Lindahl's argument has proved to be the source of far more economic research. Two fields of study relate directly to our work here: (1) extensions of the concept of Lindahl equilibrium, and (2) mechanisms capable of implementing Lindahl equilibria. 
+	
+	Extensions of Lindahl's original work were motivated by its lack of structure or inability to deal with certain economic settings. Foley (1970) rigorously stated Lindahl's result and then studied how it related to core theory (the core of an economy is the set of outcomes that optimizing agents converge to) and showed that all Lindahl equilibria are in the core of an economy. Kaneko (1977) pointed out that Lindahl's equilibrium does not dictate how profits should be redistributed, and so in the presence of profits (i.e. non-linear costs), not all Lindahl equilibria are in the core of the economy. He created a version of Lindahl's equilibrium that avoided this problem: he introduced the concept of a ratio equilibrium, in which the total costs of production of public goods are distributed among consumers according to a vector of ratios, such that the costs of provision are exactly covered and no firm earns profits. The problem of how profits should be redistributed would not be addressed until Mas-Colell and Silvestre (1989) created the concept of cost-share equilibrium, a theory of the ownership of the firm. Their model endogenously determines profit shares for a public firm, and shows that profits should be distributed according to the benefit an individual receives from a public good. This result built on Mas-Colell's (1980) previous work, in which he showed that Lindahl's original result holds when the costs of providing public goods has a non-linear structure: Lindahl's result is still efficient and able to be attained in a decentralized manner. Later, Diamantaras and Gilles (1996) showed that this continues to hold in the presence of an arbitrary number of private goods.  
+	
+	Theories of mechanism design have studied the free rider problem inherent in public goods, with attention given to implementing Lindahl allocations in particular. Consumers have an incentive to misrepresent their valuations of a public good, and so benefit from the contributions of others towards its provision. When a government or social planner does not know the private valuations of individuals, a mechanism can be used to theoretically arrive at an optimal outcome. The mechanisms of Groves and Ledyard (1977), Hurwicz (1979), and Walker (1981) all provided solutions to the free rider problem. Groves and Ledyard's mechanism is incentive compatible and was shown to implement the first and second theorems of welfare economics as well, but it is not always individually rational. Walker's mechanism addressed this issue by designing a mechanism whose outcomes were always Lindahl allocations, and so individually rational by definition. Walker's economic setting and mechanism provide the inspiration for the economic setting and mechanism found in this paper. Varian (1994a) provides a mechanism inspired by Coase-ian negotiation that addresses the problem of how to set a Pigovian tax when net social benefits are unknown. Varian (1994b) then goes on to show that when contributions to a public good are made sequentially, total contributions are never more than they are when made simultaneously. He introduces a mechanism capable of implementing Lindahl allocations in a sequential-move game involving cross-subsidization.
+	
+	More recently, mechanism design theory concerning Lindahl allocations has shifted its focus from theoretical existence and implementability, to experimental implementability. In an experimental setting, participants often do not engage in equilibrium play: they do not carry out the best responses assumed in a Nash equilibrium. Participants instead begin out of equilibrium, and adjust their behavior as they play the same game repeatedly. If the theory behind a mechanism states that these players' responses should move toward a Nash equilibrium as they learn, then that equilibrium is stable. Experimental evidence suggests that such stable equilibria are more likely to be converged upon in an experimental setting (Chen 2002). Milgrom and Roberts (1990) derived a way to compute the upper and power bounds of the set of undominated strategies for supermodular games. If the set of undominated strategies is a singleton, then they argued that out of equilibrium play should eventually converge to a single Nash equilibrium, and that this convergence was robust to a number of different assumptions about learning. Mathevet (2010) attempts to use supermodular games to solve the dilemma in mechanism design that holds a mechanism can have either a simple structure or lead to a single equilibrium.  He introduces a method of mechanism design in which the interval between Nash equilibria is minimized. His method creates mechanisms robust to bounded rationality (i.e. out of equilibrium play). Healy and Mathevet (2012) go on to show that supermodularity is not always a sufficient condition for stability. They introduce contraction mechanisms. Such mechanisms lead to best response functions that are contraction mappings, which sequentially reduce the set of undominated strategies as agents repeatedly play a game and so lead to stable equilibria. Chen (2002) invents a family of supermodular mechanisms that achieves Lindahl allocations in a general economic environment. However, Van Esson (2013) shows that the supermodularity of Chen's mechanism is not a sufficient condition for stability. In the spirit of Chen and Healy and Mathevet, he addresses this issue by creating a mechanism that leads to stable Lindahl equilibria by ensuring that all best response mappings are contractions. 
+	
+	
+	
+	\item structure
+\end{itemize}
 
 
 \section{Model}
@@ -314,35 +345,11 @@ The sum of all \(n\) first order conditions is
 
 The final qualification left to prove is that the cost of provision is covered. This is true via the construction of the personalized tax outcome function. No matter what messages are submitted, the sum of all tax schedules \(\tau_i\) equals marginal cost at every single margin, \(\sum_{i=1}^n \tau_i = c\). 
 
-Any Nash equilibrium of the game induced by our mechanism is a generalized Lindahl outcome: the outcome provides individualized tax schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. This concludes the proof
+Any Nash equilibrium of the game induced by our mechanism is a generalized Lindahl outcome: the outcome provides individualized tax schedules, covers the cost of provision of the public good, and is Pareto optimal and individually rational. This concludes the proof.
 
 \end{proof}
 
-\begin{proposition}
-Any generalized Lindahl outcome \((\vec{\tau}, x)\) can be achieved in a Nash equilibrium of a game induced by the mechanism by a correspondence of \(\mathbf{p}\). 
-\end{proposition}
 
-\begin{proof}
-Suppose we have a generalized Lindahl outcome \((\vec{\tau}, x)\). Note that this means that \(x\) is the Pareto optimal amount of the public good, so it is a best response for each individual to submit a message such that the outcome functions \ref{oc_x} and \ref{oc_t} provide \(x\). With this in mind, if we show that a profile of messages \(\mathbf{p}\) is capable of generating an outcome \((\vec{\tau}, x)\) via \ref{oc_x} and \ref{oc_t}, we have shown that the generalized Lindahl equilibrium that led to \ref{oc_x} and \ref{oc_t} is a Nash equilibrium in a game induced by the mechanism. 
-
-% does pareto optimality really lead to best response?
-
-This proof again follows Walker (1981). From \ref{oc_x} and \ref{oc_t}, we can say we have the following system of \(n\) equations:
-
-\begin{align*}
-x &= \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm \\
-\tau_n - \frac{c}{n} &= p_2 - p_1 \\
-\tau_1 - \frac{c}{n} &= p_3 - p_2 \\
-\tau_2 - \frac{c}{n} &= p_4 - p_3 \\
-&\vdots \\
-\tau_{n-2} - \frac{c}{n} &= p_n - p_{n-1} \\
-\end{align*}
-
-And now we are aided by the fact that a correspondence of \(\mathbf{p}\) is capable of producing a Nash equilibrium. The above system has \(n\) unknowns \(p_i\). To define a unique profile \(\mathbf{p}\) defined across all margins of the public good, we would need \(n\) linearly independent equations that provide structure across said margins. This system only has \(n-1\) such equations: the functions \(\tau_i - \frac{c}{n} = p_{i+2} - p_{i+1}\). The \(n^{th}\) equation, \(x = \argmax_{t \geq 0} \int_o^t \sum_{i=1}^n p_i(m) dm\), only has information on a single margin, the last margin provided. But, this is all the information that is needed to construct a correspondence of profiles \(\mathbf{p}\) that is capable of achieving a Nash equilibrium. Thus any generalized Lindahl equilibrium can be achieved in a Nash equilibrium of a game induced by the mechanism by a correspondence of \(\mathbf{p}\).
-
-\end{proof}
-
-There is no generalized Lindahl equilibrium the mechanism cannot create, and every equilibrium of the mechanism is a generalized Lindahl equilibrium. 
 
 \section{Discussion}
 
@@ -479,6 +486,43 @@ Inside the brackets, add \(0 = v_j \left( \frac{\beta_j}{\beta_j}\right)^\sigma 
 p_j =  v_j - \frac{\beta_j\strut^\sigma}{\sum_{i=1}^n \beta_i\strut^\sigma} \left[  \sum_{i =1}^n (v_i)  - c \right]
 \end{equation}
 
+\begin{thebibliography}{1}
 
+\bibitem{} Chen, Yan. "A family of supermodular Nash mechanisms implementing Lindahl allocations." Economic Theory 19.4 (2002): 773-790.
+
+\bibitem{} Diamantaras, Dimitrios, and Robert P. Gilles. "The pure theory of public goods: efficiency, decentralization, and the core." International Economic Review (1996): 851-860.
+
+\bibitem{} Foley, Duncan K. "Lindahl's Solution and the Core of an Economy with Public Goods." Econometrica: Journal of the Econometric Society (1970): 66-72.
+
+\bibitem{} Groves, Theodore, and John Ledyard. "Optimal allocation of public goods: A solution to the" free rider" problem." Econometrica: Journal of the Econometric Society (1977): 783-809.
+
+\bibitem{} Healy, Paul J., and Laurent Mathevet. "Designing stable mechanisms for economic environments." Theoretical economics 7.3 (2012): 609-661.
+
+\bibitem{} Hurwicz, Leonid. "Outcome functions yielding Walrasian and Lindahl allocations at Nash equilibrium points." The Review of Economic Studies 46.2 (1979): 217-225.
+
+\bibitem{} Kaneko, Mamoru. "The ratio equilibrium and a voting game in a public goods economy." Journal of Economic Theory 16.2 (1977): 123-136.
+
+\bibitem{} Lindahl, Erik. "Just taxation—a positive solution." Classics in the theory of public finance. Palgrave Macmillan, London, 1958. 168-176.
+
+\bibitem{} Mas-Colell, Andreu. "Efficiency and decentralization in the pure theory of public goods." The Quarterly Journal of Economics 94.4 (1980): 625-641.
+
+\bibitem{} Mathevet, Laurent. "Supermodular mechanism design." Theoretical Economics 5.3 (2010): 403-443.
+
+\bibitem{} Mas-Colell, Andreu, and Joaquim Silvestre. "Cost share equilibria: A Lindahlian approach." Journal of Economic Theory 47.2 (1989): 239-256.
+
+\bibitem{} Milgrom, Paul, and John Roberts. "Rationalizability, learning, and equilibrium in games with strategic complementarities." Econometrica: Journal of the Econometric Society (1990): 1255-1277.
+
+\bibitem{} Van Essen, Matthew J. "A simple supermodular mechanism that implements Lindahl allocations." Journal of Public Economic Theory 15.3 (2013): 363-377.
+
+\bibitem Varian, Hal R. "A solution to the problem of externalities when agents are well-informed." The American Economic Review (1994): 1278-1293.
+
+\bibitem{} Varian, Hal R. "Sequential contributions to public goods." Journal of Public Economics 53.2 (1994): 165-186.
+
+\bibitem{} Walker, Mark. "A simple incentive compatible scheme for attaining Lindahl allocations." Econometrica: Journal of the Econometric Society (1981): 65-71.
+
+\bibitem{} Wicksell, Knut. "A new principle of just taxation." Classics in the theory of public finance. Palgrave Macmillan, London, 1958. 72-118.
+
+
+\end{thebibliography}
 
 \end{document}
