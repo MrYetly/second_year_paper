@@ -31,7 +31,7 @@ Discussion: we have proved the first welfare theorem but not the second?
 	\item big picture
 	
 	
-	Public goods are an unusual economic subject in that they require we consider what is just, a normative topic in a field that usually focuses on the positive. Lindahl's (1919 [1958]) classical result concerning the optimal allocation of public goods is an opinion about what is just. He argues that a just outcome in the presence of a public good (hereafter a classical Lindahl outcome, or CLE) is one that provides the Pareto optimal level of the public good, raises individually rational taxes to finance the public good, and does so such that the taxes raised exactly equal the cost of the public good.
+	Public goods require that we consider what is just, a normative topic that economics usually delegates to assumptions about utility and utilitarianism in general. Lindahl's (1919 [1958]) classical result concerning the optimal allocation of public goods is an opinion about what is just. He argues that a just outcome in the presence of a public good (hereafter a classical Lindahl outcome, or CLE) is one that provides the Pareto optimal level of the public good, raises individually rational taxes to finance the public good, and does so such that the taxes raised exactly equal the cost of the public good.
 	
 	
 	
@@ -377,7 +377,27 @@ This issue arises from the fact that an individual's message \(p_i\) only affect
 
 To correct this issue, we are considering expanding the message space to include both a function \(p_i\) and a scalar \(\chi_i\). This would allow a player's message to pick a level of the public good independently of their submitted function. This additional information should provide the structure we need to carry out both directions of proof.
 	
+An additional direction to take this research is to propose a mechanism that implements stable generalized Lindahl equilibria. Such a mechanism could be supermodular and/or contractionary.  
 
+The design of a supermodular mechanism is complicated by the requirement to generate personalized tax schedules. A necessary condition for supermodularity is that the best responses of players are strategic complements. When a best response is a scalar message, such strategic complementarities are easy to envision. Yet we need our hypothetical mechanism to elicit messages that create tax schedules. It is hard to see how a message could do so without containing a continuous function itself. It is even less obvious how to define a best response defined over an interval as a complement to a different response defined over the same interval. Perhaps, for example, the partial derivative of best response \(A\) at each margin over which it is defined needs to be increasing in the value of the of best response \(B\) at the same margin. 
+
+The design of a a contraction mechanism is also complicated by the necessity to generate tax schedules. To understand why, we need to introduce the following definitions (Healy and Mathevet 2012). 
+
+
+\begin{definition}
+ if \(M\) is a space (such as \(\mathbb{R}^2\)) with metric d (such as the Euclidean norm), then a function \(f: M \rightarrow M\) is a contraction mapping if for some \(\epsilon \in (0,1)\) the following holds for all \(m, m' \in M\): 
+
+\[
+d(f(m), f(m') \leq \epsilon d(m, m')
+\]
+
+\end{definition}
+
+\begin{definition}
+If we have a metric space \((M, d)\) and a mechanism \(\Gamma = (M, h)\) where \(M\) is our message space, \(d\) is a metric, and \(h\) is an outcome function; and if we have a profile of players types \(\theta \in \Theta\) with preferences \(u_i( m | \theta_i)\), \(m \in M\); then \(\Gamma\) is a contraction mechanism if the game it induces with \(u_i\) has a single-valued best response function \(f(\cdot, \theta): M \rightarrow M\) that is a d-contraction mapping. 
+\end{definition}
+
+The point of complication arises in definition 3 in the message space \(M\). We need \(m \in M\) to be able to generate a tax schedule via some outcome function. It is hard to see how to do so without having \(M\) include some space of continuous functions. If, for example, we choose to work with a message space \(M = \mathbb{C}(\mathbb{R})^n\), we would need to create a distance metric that somehow quantifies the distance between a set of continuous functions. Such a distance metric make it very diffucult to prove a mechanism is contractive. 
 
 
 
