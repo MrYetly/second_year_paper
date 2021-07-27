@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  27 JUL 2021 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  27 JUL 2021 19:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -255,29 +255,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <classical_lindahl_plots.pdf, id=28, 578.16pt x 433.62pt>
 File: classical_lindahl_plots.pdf Graphic file (type pdf)
 <use classical_lindahl_plots.pdf>
-Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 89.
+Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 82.
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
  [5 <./classical_lindahl_plots.pdf>] [6] [7] [8] [9]
 <lindahl_plots.pdf, id=88, 1300.86pt x 722.7pt>
 File: lindahl_plots.pdf Graphic file (type pdf)
 <use lindahl_plots.pdf>
-Package pdftex.def Info: lindahl_plots.pdf  used on input line 256.
+Package pdftex.def Info: lindahl_plots.pdf  used on input line 249.
 (pdftex.def)             Requested size: 550.0pt x 305.56099pt.
  [10] [11 <./lindahl_plots.pdf>]
-[12] [13]
-Overfull \hbox (8.1082pt too wide) in paragraph at lines 342--343
-[]\OT1/cmr/m/n/10 For ex-am-ple, sup-pose we have a GLE de-scribed by ($\OML/cm
-m/m/it/10 ^^\[]; :::; ^^\[]$\OT1/cmr/m/n/10 ) and ($\OML/cmm/m/it/10 x; y[]; ::
-:; y[]$\OT1/cmr/m/n/10 ),
- []
-
-[14] [15] [16]
-Overfull \hbox (12.55836pt too wide) detected at line 438
+[12] [13] [14] [15] [16]
+Overfull \hbox (12.55836pt too wide) detected at line 433
 []
  []
 
 
-Overfull \hbox (56.28326pt too wide) detected at line 476
+Overfull \hbox (56.28326pt too wide) detected at line 471
 []
  []
 
@@ -310,7 +303,7 @@ e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
 1/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 2nd_year_paper.pdf (20 pages, 259854 bytes).
+Output written on 2nd_year_paper.pdf (20 pages, 260674 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  106 compressed objects within 2 object streams
