@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  27 JUL 2021 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.7.22)  30 JUL 2021 13:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -252,29 +252,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4]
-<classical_lindahl_plots.pdf, id=28, 578.16pt x 433.62pt>
+<classical_lindahl_plots.pdf, id=31, 578.16pt x 433.62pt>
 File: classical_lindahl_plots.pdf Graphic file (type pdf)
 <use classical_lindahl_plots.pdf>
-Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 82.
+Package pdftex.def Info: classical_lindahl_plots.pdf  used on input line 80.
 (pdftex.def)             Requested size: 345.0pt x 258.74484pt.
  [5 <./classical_lindahl_plots.pdf>] [6] [7] [8] [9]
-<lindahl_plots.pdf, id=88, 1300.86pt x 722.7pt>
+<lindahl_plots.pdf, id=90, 1300.86pt x 722.7pt>
 File: lindahl_plots.pdf Graphic file (type pdf)
 <use lindahl_plots.pdf>
 Package pdftex.def Info: lindahl_plots.pdf  used on input line 249.
 (pdftex.def)             Requested size: 550.0pt x 305.56099pt.
  [10] [11 <./lindahl_plots.pdf>]
-[12] [13] [14] [15] [16]
-Overfull \hbox (12.55836pt too wide) detected at line 433
+[12] [13] [14] [15]
+Overfull \hbox (12.55836pt too wide) detected at line 431
 []
  []
 
-
-Overfull \hbox (56.28326pt too wide) detected at line 471
+[16]
+Overfull \hbox (56.28326pt too wide) detected at line 469
 []
  []
 
-[17] [18] [19] [20] (./2nd_year_paper.aux)
+[17] [18] [19] (./2nd_year_paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -282,11 +282,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2590 strings out of 478994
  34312 string characters out of 5858184
- 333920 words of memory out of 5000000
+ 335920 words of memory out of 5000000
  20056 multiletter control sequences out of 15000+600000
  414088 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,10n,88p,2344b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,10n,88p,2050b,320s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -297,16 +297,18 @@ local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
 l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
 texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
-live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/202
-1/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 2nd_year_paper.pdf (20 pages, 260674 bytes).
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
+e/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2021/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 2nd_year_paper.pdf (19 pages, 280987 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 225 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
