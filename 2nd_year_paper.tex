@@ -19,7 +19,7 @@
 
 
 	
-	The theory of public goods is concerned about what is just. Erik Lindahl's classic result is really more of an argument for how economic resources should be justly allocated in the presence of a public good. He argues that such an allocation should be Pareto optimal, and that individuals should be taxed according to the benefit they receive from the public good such that the sum of all taxes exactly covers the cost of providing it. His equilibrium is just because it is individually rational for individuals to accept the taxes administered to them and because it leaves those individuals as well off as they can be. It has become a standard by which theories of the provision of public goods are measured.
+	The theory of public goods is concerned about what is just. Erik Lindahl's classic result (1919 [1958]) is an argument for how economic resources should be justly allocated in the presence of a public good. He argues that such an allocation should be Pareto optimal, and that individuals should be taxed according to the benefit they receive from the public good such that the sum of all taxes exactly covers the cost of providing it. His equilibrium is just because it is individually rational for individuals to accept the taxes administered to them and because it leaves those individuals as well off as they can be. It has become a standard by which theories of the provision of public goods are measured.
 	
 	Yet, it is inadequate because it is restricted to linear taxation. It cannot take into account the distribution of surplus created by the taxes it proscribes. As we show, this uncontrolled margin allows for outcomes that are very unjust. In order to build a more rigorous standard, we introduce the concept of a generalized Lindahl equilibrium.
 	
@@ -368,15 +368,20 @@ d(f(m), f(m')) \leq \epsilon  d(m, m')
 If we have a metric space \((M, d)\) and a mechanism \(\Gamma = (M, h)\) where \(M\) is our message space, \(d\) is a metric, and \(h\) is an outcome function; and if we have a profile of player types \(\theta \in \Theta\) with preferences \(u_i( m | \theta_i)\) s.t. \(m \in M\); then \(\Gamma\) is a contraction mechanism if the game it induces with \(u_i\) has a single-valued best response function \(f(\cdot, \theta): M \rightarrow M\) that is a d-contraction mapping. 
 \end{definition}
 
-The point of complication arises in definition 3 with the message space \(M\). We need \(m \in M\) to be able to generate a tax schedule via some outcome function. It is hard to see how to do so without having \(M\) include some space of continuous functions. If, for example, we choose to work with a message space \(M = \mathbb{C}(\mathbb{R})^n\), we would need to create a distance metric that somehow quantifies the distance between a pair of continuous functions. Such a distance metric may make it very diffucult to prove a mechanism is contractive. 
-
-
+The point of complication arises in definition 3 with the message space \(M\). We need \(m \in M\) to be able to generate a tax schedule via some outcome function. It is hard to see how to do so without having \(M\) include some space of continuous functions. If, for example, we choose to work with a message space \(M = \mathbb{C}(\mathbb{R})^n\), we would need to create a distance metric that somehow quantifies the distance between a pair of continuous functions. Such a distance metric may make it very difficult to prove a mechanism is contractive. 
 
 \section{Conclusion}
 
-\section{Appendix}
+Our generalized Lindahl equilibrium is an improvement on a classical Lindahl equilibrium. The classical result has desirable properties. It is Pareto optimal, individually rational, and covers the cost of providing a public good. But, it can lead to unjust outcomes because it does not take into account the distribution of consumer surplus. A generalized Lindahl equilibrium corrects this shortcoming, and retains all of the desirable features of a classical Lindahl equilibrium. 
 
-The solution will take place as follows: I will solve for \(p_1\) in terms of \(p_2, v_1\) and \(v_2\), and then substitute \(p_1\) into \ref{iso_simp}; I will iterate this process two more times, substituting equations for \(p_2\) and \(p_3\) into \ref{iso_simp}; at that point a pattern will emerge that will allow me to extrapolate a closed-form solution for to \(p_n\), and then for \(p_{n-1}\); finally, I will use the pattern observable in the solutions for \(p_n\) and \(p_{n-1}\) solution to deduce a closed form solution for \(p_i\) in general.
+We have shown how a generalized Walker mechanism allows a social planner to attain a generalized Lindahl equilibrium when they do not know the private valuations of consumers. We have proved that any Nash equilibrium of a game induced by this mechanism is a generalized Lindahl allocation. In future research, we would like to prove that any generalized Lindahl allocation is achieved by a unique Nash equilibrium induced by our mechanism.
+
+Lindahl's classical result is a standard by which public goods theories are measured. Our generalization is a better standard, because it is not satisfied by individuals merely being better off: \textit{how} they are better off matters, in relation to themselves and others. This new standard is applicable to any economy concerned with the distribution of surplus; and any economy that is not is potentially unjust.
+
+
+\section*{Appendix}
+
+The solution for closed forms of the personalized tax functions in section 2 will take place as follows: I will solve for \(p_1\) in terms of \(p_2, v_1\) and \(v_2\) using the first equation from the system, and then substitute \(p_1\) into \ref{iso_simp}; I will iterate this process two more times, substituting equations for \(p_2\) and \(p_3\) into \ref{iso_simp}; at that point a pattern will emerge that will allow me to extrapolate a closed-form solution for \(p_n\), and then for \(p_{n-1}\); finally, I will use the pattern observable in the solutions for \(p_n\) and \(p_{n-1}\) to deduce a closed form solution for \(p_j\) in general.
 
 As stated, first solve for \(p_1\) 
 	
@@ -396,7 +401,7 @@ Combine terms, keeping prices and marginal benefits organized, and note that \(\
 \left( 1 + \Omega_{12} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{12} v_2 = c
 \]
 
-Iterating, solve for \(p_2\) in terms of \(p_3, v_2\) and \(v_3\) using the equation relating \(p_2\) to \(p_3\) from our system of equalities. Substitute into above.
+Iterating, solve for \(p_2\) in terms of \(p_3, v_2\), and \(v_3\) using the equation relating \(p_2\) to \(p_3\) from our system of equalities. Substitute into above.
 
 \[
 \left( 1 + \Omega_{12} \right) \left( \frac{-v_3}{\Omega_{32}} + v_2 + \frac{p_3}{\Omega_{32}} \right) + p_3 + p_4 + ... + p_n + v_1 -\Omega_{12} v_2 = c
@@ -420,7 +425,7 @@ Combine terms, and we get a third instance of the pattern.
 \left( 1 + \Omega_{34} + \Omega_{24} + \Omega_{14} \right) p_4 + p_5 + ... + p_n + v_1 + v_2 + v_3 - (\Omega_{34} + \Omega_{24} + \Omega_{14}) v_4 = c
 \]
 
-Let's quickly look at all three instances of the pattern together.
+Let's quickly look at all three instances of the pattern.
 
 \begin{align*}
 &\left( 1 + \Omega_{12} \right) p_2 + p_3 + ... + p_n + v_1 - \Omega_{12} v_2 = c
@@ -440,9 +445,10 @@ Solving for \(p_n\), we get
 
 \begin{equation}
 p_n = \left( \sum_{i=1}^n \Omega_{ni} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{ni}\right]
+\label{p_n}
 \end{equation}
 
-To get a closed form solution for any \(p_i\), I'll first use 6 to solve for \(p_{n-1}\) using the equation from our system of equations that relates \(p_{n-1}\) to \(p_n\). Then with closed from solutions for both \(p_n\) and \(p_{n-1}\), a pattern emerges that I use to solve for the general closed form solution for \(p_i\).
+To get a closed form solution for any \(p_j\), I'll first use 6 to solve for \(p_{n-1}\) using the equation from our system of equations that relates \(p_{n-1}\) to \(p_n\). Then with closed from solutions for both \(p_n\) and \(p_{n-1}\), a pattern emerges that I use to solve for the general closed form solution for \(p_i\).
 
 First, solve for \(p_{n-1}\). We know that
 
@@ -450,7 +456,7 @@ First, solve for \(p_{n-1}\). We know that
 p_{n-1} = \frac{-v_n}{\Omega_{n,n-1}} + v_{n-1} + \frac{p_n}{\Omega_{n,n-1}}
 \]
 
-Substitute in 6. Step by step simplification:
+Substitute in \ref{p_n}. Step by step simplification:
 
 \begin{align*}
 p_{n-1} &= \frac{-v_n}{\Omega_{n,n-1}} + v_{n-1} + \frac{1}{\Omega_{n,n-1}} \left( \sum_{i=1}^n \Omega_{in} \right)^{-1} \left[  c - \sum_{i=1}^{n-1} v_i + v_n \sum_{i=1}^{n-1} \Omega_{in}\right]
@@ -483,10 +489,10 @@ v_{n-1} \sum_{i=1}^n \Omega_{i, n-1} = v_{n-1} \left( 1 +\sum_{i \neq n-1} \Omeg
  Or
  
  \begin{equation}
- p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}  \right]
+ p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}  \right] \label{p_n-1}
  \end{equation}
 
-Our closed form solution to \(p_{n-1}\). Finally let's compare 7 to 6.
+Our closed form solution to \(p_{n-1}\). Finally let's compare \ref{p_n-1} to \ref{p_n}.
 
 \begin{align*}
  &p_{n-1} =  \left( \sum_{i=1}^n \Omega_{i, n-1} \right)^{-1} \left[ c - \sum_{i \neq n-1} v_i + v_{n-1} \sum_{i \neq n-1} \Omega_{i, n-1}  \right]
